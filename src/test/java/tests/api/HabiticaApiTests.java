@@ -1,14 +1,15 @@
-package tests;
+package tests.api;
 
 import authorization.Authorization;
-import extensions.WithLogin;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 
-
+@Tag("api")
 public class HabiticaApiTests extends TestBase {
 
     @Test
