@@ -5,11 +5,12 @@ import com.codeborne.selenide.Selenide;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import data.AuthTestData;
+import config.AuthConfig;
 import io.restassured.http.ContentType;
 import models.AuthRequestBodyModel;
 import models.AuthResponseBodyModel;
 import models.HabitMobileSettings;
+import org.aeonbits.owner.ConfigFactory;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.get;
@@ -19,10 +20,10 @@ public class Authorization {
 
     public static AuthResponseBodyModel getAuthResponse() {
 
-        AuthTestData logoPass = new AuthTestData();
+        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         AuthRequestBodyModel request = new AuthRequestBodyModel();
-        request.setUsername(logoPass.getLogin());
-        request.setPassword(logoPass.getPassword());
+        request.setUsername(authConfig.login());
+        request.setPassword(authConfig.password());
         return given().log().all()
                 .contentType(ContentType.JSON)
                 .body(request)
