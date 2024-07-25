@@ -12,7 +12,6 @@ public class TestBase {
     public static void beforeAll(){
 
         WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
-
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserSize = webConfig.browserSize();
@@ -22,8 +21,8 @@ public class TestBase {
         if(webConfig.isRemote()){
             Configuration.remote = webConfig.remoteUrl();
         }
-
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
+
     }
 }
