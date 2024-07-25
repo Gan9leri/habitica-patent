@@ -3,7 +3,7 @@ import org.aeonbits.owner.Config;
 
 
 @Config.Sources({
-        "classpath:${envWeb}.properties"
+        "classpath:${envWeb}.properties",
 })
 
 public interface WebConfig extends Config {
@@ -25,5 +25,11 @@ public interface WebConfig extends Config {
 
     @DefaultValue("/api")
     String basePath();
+
+    @DefaultValue("false")
+    boolean isRemote();
+
+    @DefaultValue("https://habitica.com")
+    String remoteUrl();
 
 }
