@@ -23,6 +23,8 @@ public class HabiticaApiTests extends TestBase{
                 .get("/v4/user")
                 .then().log().all().
                 statusCode(200);
+
+
     }
 
 }
