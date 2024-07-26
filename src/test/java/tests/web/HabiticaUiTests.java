@@ -1,17 +1,10 @@
 package tests.web;
 import com.github.javafaker.Faker;
-import com.codeborne.selenide.Selenide;
+import data.BaseUrlSectionsName;
+import data.FaqUrlSectionsNames;
 import extensions.WithLogin;
-import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-
-import java.util.List;
-import java.util.stream.Stream;
-
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -26,59 +19,14 @@ public class HabiticaUiTests extends TestBase {
     @Test
     @WithLogin
     void addTaskTest(){
+        Faker faker = new Faker();
+        String task = faker.job().keySkills();
         open("");
         $(byTagAndText("div", "Добавить задачу")).click();
         $(byTagAndText("div", "задачу")).click();
-        $(".task-purple-modal-input").setValue("Сделать диплом");
+        $(".task-purple-modal-input").setValue(task);
         $(byTagAndText("button", "Создать")).click();
-        $(byTagAndText("p", "Сделать диплом")).shouldHave(text("Сделать диплом"));
-    }
-
-    @Test
-    @WithLogin
-    void openWikiTest(){
-        open("");
-        $(byTagAndText("a", "Помощь")).click();
-        webdriver().shouldHave(currentFrameUrl("https://habitica.com/static/faq"));
-    }
-
-    @Test
-    @WithLogin
-    void openRuleTest(){
-        open("");
-        $(byTagAndText("a", "Правила сообщества")).scrollIntoView(true).click();
-        webdriver().driver().switchTo().window(1);
-        webdriver().shouldHave(currentFrameUrl("https://habitica.com/static/community-guidelines"));
-        $("#welcome").shouldHave(text(" Добро пожаловать в страну Habitica! "));
-    }
-
-    static Stream<Arguments> sectionsForumTest(){
-        return Stream.of( Arguments.of( List.of(
-                "Задачи", "Инвентарь", "Лавки", "Команда", "Группа", "Испытания", "Помощь") ) );
-    }
-    @ParameterizedTest
-    @MethodSource
-    @WithLogin
-    void sectionsForumTest(List<String> value) {
-        open("");
-        for (String item : value) {
-            $("#menu_collapse").$$("li").filter(visible).find(text(item)).click();
-        }
-    }
-
-    @Test
-    @WithLogin
-    void challengesTest(){
-        open("/challenges/myChallenges");
-        $(".owner").shouldHave(text("Gan9leri"));
-    }
-
-    @Test
-    @WithLogin
-    void homePageTest(){
-        open("https://habitica.com/static/overview");
-        $(".habitica-logo").click();
-        webdriver().shouldHave(currentFrameUrl("https://habitica.com/"));
+        $(byTagAndText("p", task)).shouldHave(text(task));
     }
 
     @Test
@@ -91,4 +39,54 @@ public class HabiticaUiTests extends TestBase {
         $(byTagAndText("button", "Отправить")).click();
         $(".container-fluid").shouldHave(text(message));
     }
+
+    @Test
+    @WithLogin
+    void challengesTest(){
+        open("/challenges/myChallenges");
+        $(".owner").shouldHave(text("Gan9leri"));
+    }
+
+    @Test
+    @WithLogin
+    void openRuleTest(){
+        open("");
+        $(byTagAndText("a", "Правила сообщества")).scrollIntoView(true).click();
+        webdriver().driver().switchTo().window(1);
+        webdriver().shouldHave(currentFrameUrl("https://habitica.com/static/community-guidelines"));
+        $("#welcome").shouldHave(text(" Добро пожаловать в страну Habitica! "));
+    }
+
+    @Test
+    @WithLogin
+    void baseUrlSectionsSelectionTest() {
+        BaseUrlSectionsName[] names = BaseUrlSectionsName.values();
+        open("");
+        for (BaseUrlSectionsName item : names) {
+            $("#menu_collapse").$$("li").filter(visible)
+                    .find(text(item.getValue())).click();
+            webdriver().shouldHave(currentFrameUrl(item.getLink()));
+        }
+    }
+
+    @Test
+    @WithLogin
+    void faqUrlSectionsSelectionTest(){
+        FaqUrlSectionsNames[] names = FaqUrlSectionsNames.values();
+        open("https://habitica.com/static/faq");
+        for (FaqUrlSectionsNames item: names) {
+            $(".navbar-nav").$$("li").filter(visible)
+                    .find(text(item.getValue())).click();
+            webdriver().shouldHave(currentFrameUrl(item.getLink()));
+        }
+    }
+
+    @Test
+    @WithLogin
+    void homePageTest(){
+        open("https://habitica.com/static/overview");
+        $(".habitica-logo").click();
+        webdriver().shouldHave(currentFrameUrl("https://habitica.com/"));
+    }
+
 }
