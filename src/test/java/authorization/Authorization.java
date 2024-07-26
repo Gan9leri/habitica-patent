@@ -46,4 +46,5 @@ public class Authorization {
         Selenide.localStorage().setItem("habit-mobile-settings", authData);
 
     }
+
 }
