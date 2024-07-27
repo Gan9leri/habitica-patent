@@ -20,7 +20,7 @@ import java.net.URL;
 
 public class RealDeviceDriver implements WebDriverProvider {
 
-    static RealDeviceConfig realDeviceConfig = ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
+    public static RealDeviceConfig realDeviceConfig = ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -30,6 +30,7 @@ public class RealDeviceDriver implements WebDriverProvider {
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
                 .setDeviceName(realDeviceConfig.deviceName())
+                .setPlatformVersion("12.0")
                 .setApp(getAppPath())
                 .setAppPackage("com.habitrpg.android.habitica")
                 .setAppActivity("com.habitrpg.android.habitica.ui.activities.MainActivity");
