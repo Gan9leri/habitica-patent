@@ -7,9 +7,9 @@ import org.aeonbits.owner.Config;
 })
 
 public interface RealDeviceConfig extends Config {
-    @Config.DefaultValue("http://localhost:4723/wd/hub")
+    @DefaultValue("http://localhost:4723/wd/hub")
     String mobileUrl();
 
-    @Config.DefaultValue("7cfb82f6")
+    @DefaultValue("7cfb82f6")
     String deviceName();
 }
