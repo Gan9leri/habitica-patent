@@ -2,7 +2,7 @@ package tests.api;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static extensions.TaskExtension.getTaskId;
+//import static tests.api.TaskExtension.getTaskId;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import config.AuthConfig;
@@ -16,9 +16,11 @@ import org.junit.jupiter.api.Test;
 import static authorization.Authorization.getAuthResponse;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static extensions.TaskExtension.addTask;
+//import static tests.api.TaskExtension.addTask;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static tests.api.TaskExtension.addTask;
+import static tests.api.TaskExtension.getTaskId;
 
 
 @Tag("api")
@@ -41,7 +43,7 @@ public class HabiticaApiTests extends TestBase{
                 .then().log().all().
                 statusCode(200)
                 .extract().as(UserResponseBodyModel.class);
-        assertThat(response.getData().getFirst().getText()).isEqualTo(task);
+        assertThat(response.getData().get(0).getText()).isEqualTo(task);
     }
 
     @Test
@@ -111,7 +113,8 @@ public class HabiticaApiTests extends TestBase{
                         .then().log().all()
                         .statusCode(200)
                         .extract().as(TagResponseBodyModel.class);
+        Integer size = response.getData().size();
         assertThat(response.getSuccess()).isEqualTo(true);
-        assertEquals("QA.GURU", response.getData().getLast().getName());
+        assertThat(response.getData().get(size-1).getName()).isEqualTo("QA.GURU");
     }
 }
