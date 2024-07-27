@@ -1,4 +1,4 @@
-package extensions;
+package tests.api;
 
 import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
@@ -44,6 +44,6 @@ public class TaskExtension {
                         statusCode(200)
                         .extract().as(UserResponseBodyModel.class);
         closeWindow();
-        return response.getData().getFirst().getId();
+        return response.getData().get(0).getId();
     }
 }
