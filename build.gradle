@@ -75,7 +75,7 @@ task HabiticaUiTests(type: Test) {
     }
 }
 
-task HabiticaMobileTests(type: Test) {
+task ScreenNavigationTests(type: Test) {
     useJUnitPlatform {
         includeTags("mobile")
     }
