@@ -7,20 +7,19 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
-import static io.appium.java_client.remote.MobilePlatform.ANDROID;
-import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
-
 import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
+import static io.appium.java_client.remote.MobilePlatform.ANDROID;
+import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class RealDeviceDriver implements WebDriverProvider {
 
-    public static RealDeviceConfig realDeviceConfig = ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
+    static RealDeviceConfig realDeviceConfig = ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -30,7 +29,6 @@ public class RealDeviceDriver implements WebDriverProvider {
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
                 .setDeviceName(realDeviceConfig.deviceName())
-                .setPlatformVersion("12.0")
                 .setApp(getAppPath())
                 .setAppPackage("com.habitrpg.android.habitica")
                 .setAppActivity("com.habitrpg.android.habitica.ui.activities.MainActivity");
@@ -47,9 +45,8 @@ public class RealDeviceDriver implements WebDriverProvider {
     }
 
     private String getAppPath() {
-        //String appVersion = "app-alpha-universal-release.apk";
-        String appUrl = "https://github.com/HabitRPG/habitica-android/releases/download/4.0.2/Habitica-2209014510-prod-release.apk";//+ appVersion;
-        String appPath = "src/test/resources/apps/Habitica-2209014510-prod-release.apk";// + appVersion;
+        String appUrl = "https://github.com/HabitRPG/habitica-android/releases/download/4.0.2/Habitica-2209014510-prod-release.apk";
+        String appPath = "src/test/resources/apps/Habitica-2209014510-prod-release.apk";
 
         File app = new File(appPath);
         if (!app.exists()) {
@@ -59,8 +56,6 @@ public class RealDeviceDriver implements WebDriverProvider {
                 throw new AssertionError("Failed to download application", e);
             }
         }
-        System.out.println(app.getAbsolutePath());
         return app.getAbsolutePath();
     }
-
 }
