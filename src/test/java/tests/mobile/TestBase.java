@@ -24,6 +24,6 @@ public class TestBase {
 
     @AfterEach
     void afterEach() {
-        //closeWebDriver();
+        closeWebDriver();
     }
 }
