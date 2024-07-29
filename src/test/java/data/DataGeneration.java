@@ -5,5 +5,6 @@ public class DataGeneration {
 
     Faker faker = new Faker();
     public String message = faker.name().firstName();
+    public String task = faker.job().keySkills();
 
 }
