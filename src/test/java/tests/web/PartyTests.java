@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import pages.PartyPage;
 
 @DisplayName("Тесты для страницы команды")
-@Tag("ui")
+@Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Party")
 public class PartyTests extends TestBase{
