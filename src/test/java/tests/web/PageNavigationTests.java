@@ -1,7 +1,7 @@
 package tests.web;
 
-import data.BaseUrlSectionsName;
-import data.FaqUrlSectionsNames;
+import Enumeration.MainPageSectionsName;
+import Enumeration.FaqPageSectionsNames;
 import extensions.WithLogin;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
-@Tag("ui")
+@Tag("web")
 public class PageNavigationTests extends TestBase{
     @Test
     @WithLogin
@@ -27,9 +27,9 @@ public class PageNavigationTests extends TestBase{
     @Test
     @WithLogin
     void mainPageNavigationTest() {
-        BaseUrlSectionsName[] names = BaseUrlSectionsName.values();
+        MainPageSectionsName[] names = MainPageSectionsName.values();
         open("");
-        for (BaseUrlSectionsName item : names) {
+        for (MainPageSectionsName item : names) {
             $("#menu_collapse").$$("li").filter(visible)
                     .find(text(item.getValue())).click();
             webdriver().shouldHave(currentFrameUrl(item.getLink()));
@@ -39,9 +39,9 @@ public class PageNavigationTests extends TestBase{
     @Test
     @WithLogin
     void faqPageNavigationTest(){
-        FaqUrlSectionsNames[] names = FaqUrlSectionsNames.values();
+        FaqPageSectionsNames[] names = FaqPageSectionsNames.values();
         open("https://habitica.com/static/faq");
-        for (FaqUrlSectionsNames item: names) {
+        for (FaqPageSectionsNames item: names) {
             $(".navbar-nav").$$("li").filter(visible)
                     .find(text(item.getValue())).click();
             webdriver().shouldHave(currentFrameUrl(item.getLink()));
