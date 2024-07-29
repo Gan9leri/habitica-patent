@@ -25,7 +25,7 @@ public class TestBase {
             Configuration.remote = webConfig.remoteUrl();
         }
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
 
     }
 
