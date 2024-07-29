@@ -1,9 +1,9 @@
-package data;
+package Enumeration;
 
 import lombok.Getter;
 
 @Getter
-public enum FaqUrlSectionsNames {
+public enum FaqPageSectionsNames {
     HOW_IT_WORKS ("Как это работает", "https://habitica.com/static/features"),
     GROUP_PLANS ("Групповые планы", "https://habitica.com/static/plans"),
     FOR_PRESS("Для прессы", "https://habitica.com/static/press-kit"),
@@ -12,7 +12,7 @@ public enum FaqUrlSectionsNames {
     private final String value;
     private final String link;
 
-    FaqUrlSectionsNames(String value, String link) {
+    FaqPageSectionsNames(String value, String link) {
         this.value = value;
         this.link = link;
     }
