@@ -24,6 +24,6 @@ public class ChallengesTests extends TestBase {
     @WithLogin
     void ownerOfChallengeTest(){
         challengesPage.openChallengePage()
-                        .checkOwnerOfChallenge(authConfig.login());
+                      .checkOwnerOfChallenge(authConfig.login());
     }
 }
