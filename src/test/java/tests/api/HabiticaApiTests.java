@@ -19,6 +19,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 //import static tests.api.TaskExtension.addTask;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static specs.HabiticaSpecs.*;
 import static tests.api.TaskExtension.addTask;
 import static tests.api.TaskExtension.getTaskId;
 
@@ -34,14 +35,13 @@ public class HabiticaApiTests extends TestBase{
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();
         UserResponseBodyModel response =
-        given().log().all()
-                .contentType(ContentType.JSON)
+        given(RequestSpec)
                 .header("X-Api-User", xApiUser)
                 .header("X-Api-Key", xApiKey)
                 .when()
                 .get("v4/tasks/user")
-                .then().log().all().
-                statusCode(200)
+                .then()
+                .spec(ResponseSpec200)
                 .extract().as(UserResponseBodyModel.class);
         assertThat(response.getData().get(0).getText()).isEqualTo(task);
     }
@@ -54,14 +54,13 @@ public class HabiticaApiTests extends TestBase{
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();
         DeleteTaskResponseBodyModel response =
-                given().log().all()
-                        .contentType(ContentType.JSON)
+                given(RequestSpec)
                         .header("X-Api-User", xApiUser)
                         .header("X-Api-Key", xApiKey)
                         .when()
                         .delete("v4/tasks/" + taskId)
-                        .then().log().all()
-                        .statusCode(200)
+                        .then()
+                        .spec(ResponseSpec200)
                         .extract().as(DeleteTaskResponseBodyModel.class);
         assertThat(response.getSuccess()).isEqualTo(true);
     }
@@ -72,13 +71,12 @@ public class HabiticaApiTests extends TestBase{
         AuthRequestBodyModel request = new AuthRequestBodyModel();
         request.setUsername(authConfig.login());
         request.setPassword(authConfig.password());
-        AuthResponseBodyModel response = given().log().all()
-                .contentType(ContentType.JSON)
+        AuthResponseBodyModel response = given(RequestSpec)
                 .body(request)
                 .when()
                 .post("/v4/user/auth/local/login")
-                .then().log().all()
-                .statusCode(200)
+                .then()
+                .spec(ResponseSpec200)
                 .extract().as(AuthResponseBodyModel.class);
         assertThat(response.getSuccess()).isEqualTo(true);
     }
@@ -88,13 +86,12 @@ public class HabiticaApiTests extends TestBase{
         AuthRequestBodyModel request = new AuthRequestBodyModel();
         request.setUsername("error");
         request.setPassword("error");
-        NotAuthRequestBodyModel response = given().log().all()
-                .contentType(ContentType.JSON)
+        NotAuthRequestBodyModel response = given(RequestSpec)
                 .body(request)
                 .when()
                 .post("/v4/user/auth/local/login")
-                .then().log().all()
-                .statusCode(401)
+                .then()
+                .spec(ResponseSpec401)
                 .extract().as(NotAuthRequestBodyModel.class);
         assertThat(response.getSuccess()).isEqualTo(false);
     }
@@ -105,13 +102,13 @@ public class HabiticaApiTests extends TestBase{
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();
         TagResponseBodyModel response =
-                given().log().all()
+                given(RequestSpec)
                         .when()
                         .header("X-Api-User", xApiUser)
                         .header("X-Api-Key", xApiKey)
                         .get("/v3/tags")
-                        .then().log().all()
-                        .statusCode(200)
+                        .then()
+                        .spec(ResponseSpec200)
                         .extract().as(TagResponseBodyModel.class);
         Integer size = response.getData().size();
         assertThat(response.getSuccess()).isEqualTo(true);
