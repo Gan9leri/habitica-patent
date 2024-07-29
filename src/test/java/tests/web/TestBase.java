@@ -4,7 +4,10 @@ import com.codeborne.selenide.Configuration;
 import config.WebConfig;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
@@ -24,5 +27,10 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
 
+    }
+
+    @AfterEach
+    void afterEach() {
+        closeWebDriver();
     }
 }
