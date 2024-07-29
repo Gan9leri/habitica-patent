@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import pages.ChallengesPage;
 
 @DisplayName("Тесты для страницы испытаний")
-@Tag("ui")
+@Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Challenges")
 public class ChallengesTests extends TestBase {
