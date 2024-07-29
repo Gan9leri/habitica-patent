@@ -63,19 +63,19 @@ test{
     useJUnitPlatform()
 }
 
-task HabiticaApiTests(type: Test) {
+task web(type: Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+}
+
+task api(type: Test) {
     useJUnitPlatform {
         includeTags("api")
     }
 }
 
-task HabiticaUiTests(type: Test) {
-    useJUnitPlatform {
-        includeTags("ui")
-    }
-}
-
-task ScreenNavigationTests(type: Test) {
+task android(type: Test) {
     useJUnitPlatform {
         includeTags("mobile")
     }
