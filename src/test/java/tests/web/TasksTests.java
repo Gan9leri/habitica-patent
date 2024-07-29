@@ -1,6 +1,5 @@
 package tests.web;
 
-import com.github.javafaker.Faker;
 import data.DataGeneration;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -10,10 +9,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byTagAndText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 @DisplayName("Тесты для главной страницы")
 @Tag("web")
