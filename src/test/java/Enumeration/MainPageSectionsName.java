@@ -1,9 +1,9 @@
-package data;
+package Enumeration;
 
 import lombok.Getter;
 
 @Getter
-public enum BaseUrlSectionsName {
+public enum MainPageSectionsName {
 
     ISSUES ("Задачи","https://habitica.com/"),
     INVENTORY ("Инвентарь", "https://habitica.com/inventory/items"),
@@ -17,7 +17,7 @@ public enum BaseUrlSectionsName {
     private final String value;
     private final String link;
 
-    BaseUrlSectionsName(String value, String link) {
+    MainPageSectionsName(String value, String link) {
         this.value = value;
         this.link = link;
     }
