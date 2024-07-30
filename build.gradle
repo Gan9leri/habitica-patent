@@ -75,7 +75,7 @@ task api(type: Test) {
     }
 }
 
-task android(type: Test) {
+task mobile(type: Test) {
     useJUnitPlatform {
         includeTags("mobile")
     }
