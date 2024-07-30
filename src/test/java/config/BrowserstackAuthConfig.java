@@ -8,7 +8,10 @@ import org.aeonbits.owner.Config;
 
 public interface BrowserstackAuthConfig extends Config{
 
+    @DefaultValue("bsuser_akIolY")
     String mobileUser();
+
+    @DefaultValue("v4PBoq5d5rxdcyRSVYet")
     String mobilePass();
 
 }
