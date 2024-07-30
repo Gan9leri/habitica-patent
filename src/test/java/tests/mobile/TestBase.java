@@ -18,6 +18,7 @@ public class TestBase {
         Configuration.timeout = 30000;
         //Configuration.browser = RealDeviceDriver.class.getName();
         Configuration.browser = BrowserstackDriver.class.getName();
+        //Configuration.browser = EmulationDriver.class.getName();
         if ("browserstack".equals(System.getProperty("deviceHost"))) {
             Configuration.browser = BrowserstackDriver.class.getName();
         }
