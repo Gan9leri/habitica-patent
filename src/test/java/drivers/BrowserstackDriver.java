@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.BrowserstackAuthConfig;
+import config.browserstackAuth;
 import config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -19,8 +19,8 @@ public class BrowserstackDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
         MutableCapabilities caps = new MutableCapabilities();
-        BrowserstackAuthConfig authConfig =
-                ConfigFactory.create(BrowserstackAuthConfig.class, System.getProperties());
+        browserstackAuth authConfig =
+                ConfigFactory.create(browserstackAuth.class, System.getProperties());
         BrowserstackConfig hostConfig =
                 ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
@@ -32,6 +32,7 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("project", hostConfig.mobileProject());
         caps.setCapability("build", hostConfig.mobileBuild());
         caps.setCapability("name", hostConfig.mobileName());
+        caps.setCapability("url", hostConfig.remoteUrl());
         //caps.setCapability("language", hostConfig.mobileLanguage());
         //caps.setCapability("locale", hostConfig.mobileLocale());
 
