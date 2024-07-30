@@ -1,9 +1,8 @@
-package tests.api;
+package extensions;
 
 import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import models.UserResponseBodyModel;
-
 import static authorization.Authorization.getAuthResponse;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.*;
@@ -40,8 +39,8 @@ public class TaskExtension {
                         .header("X-Api-Key", xApiKey)
                         .when()
                         .get("v4/tasks/user")
-                        .then().log().all().
-                        statusCode(200)
+                        .then().log().all()
+                        .statusCode(200)
                         .extract().as(UserResponseBodyModel.class);
         closeWindow();
         return response.getData().get(0).getId();
