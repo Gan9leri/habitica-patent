@@ -16,8 +16,8 @@ public class TestBase {
     static void beforeAll() {
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
-        Configuration.browser = RealDeviceDriver.class.getName();
-        Configuration.browser = RealDeviceDriver.class.getName();
+        //Configuration.browser = RealDeviceDriver.class.getName();
+        Configuration.browser = BrowserstackDriver.class.getName();
         if ("browserstack".equals(System.getProperty("deviceHost"))) {
             Configuration.browser = BrowserstackDriver.class.getName();
         }
