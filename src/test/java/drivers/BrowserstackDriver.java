@@ -32,8 +32,8 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("project", hostConfig.mobileProject());
         caps.setCapability("build", hostConfig.mobileBuild());
         caps.setCapability("name", hostConfig.mobileName());
-        caps.setCapability("language", hostConfig.mobileLanguage());
-        caps.setCapability("locale", hostConfig.mobileLocale());
+        //caps.setCapability("language", hostConfig.mobileLanguage());
+        //caps.setCapability("locale", hostConfig.mobileLocale());
 
         try {
             return new RemoteWebDriver(
