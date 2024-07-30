@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 
 public interface BrowserstackConfig extends Config {
 
-    @DefaultValue("http://hub.browserstack.com/wd/hub")
+    @DefaultValue("https://hub.browserstack.com/wd/hub")
     String remoteUrl();
 
     @DefaultValue("Google Pixel 6")
@@ -17,7 +17,7 @@ public interface BrowserstackConfig extends Config {
     @DefaultValue("12.0")
     String mobilePlatform();
 
-    @DefaultValue("bs://01d2eccefae833ceea2a51d3d729a3ac71f23c1d")
+    @DefaultValue("bs://f09b3495887f76cc04547455c2c0683773bac402")
     String mobileApp();
 
     @DefaultValue("First Java Project")
