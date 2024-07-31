@@ -8,40 +8,14 @@ import org.aeonbits.owner.Config;
 
 public interface BrowserstackConfig extends Config {
 
-    @Key("remoteUrl")
-    @DefaultValue("https://hub.browserstack.com/wd/hub")
-    String remoteUrl();
-
-    @Key("deviceName")
-    @DefaultValue("Google Pixel 6")
+    String browserstackUser();
+    String browserstackKey();
+    String app();
     String deviceName();
-
-    @Key("mobilePlatform")
-    @DefaultValue("12.0")
-    String mobilePlatform();
-
-    @Key("mobileApp")
-    @DefaultValue("bs://f09b3495887f76cc04547455c2c0683773bac402")
-    String mobileApp();
-
-    @Key("mobileProject")
-    @DefaultValue("First Java Project")
-    String mobileProject();
-
-    @Key("mobileBuild")
-    @DefaultValue("browserstack-build-1")
-    String mobileBuild();
-
-    @Key("mobileName")
-    @DefaultValue("first_test")
-    String mobileName();
-
-    @Key("mobileLanguage")
-    @DefaultValue("ru")
-    String mobileLanguage();
-
-    @Key("mobileLocale")
-    @DefaultValue("RU")
-    String mobileLocale();
+    String platformVersion();
+    String projectName();
+    String buildName();
+    String name();
+    String browserstackUrl();
 
 }

@@ -1,9 +1,11 @@
 package tests.mobile;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackDriver;
 import drivers.EmulationDriver;
 import drivers.RealDeviceDriver;
+import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,4 +42,5 @@ public class TestBase {
     void afterEach() {
         closeWebDriver();
     }
+
 }
