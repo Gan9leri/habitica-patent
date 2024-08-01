@@ -1,4 +1,4 @@
-package Enumeration;
+package enumeration;
 
 import lombok.Getter;
 

@@ -16,7 +16,7 @@ public interface WebConfig extends Config {
     @DefaultValue("1920x1080")
     String browserSize();
 
-    @DefaultValue("126")
+    @DefaultValue("127")
     String browserVersion();
 
     @DefaultValue("https://habitica.com")

@@ -44,8 +44,7 @@ dependencies {
             'com.github.javafaker:javafaker:1.0.2',
             'commons-io:commons-io:2.11.0',
 
-            'com.codeborne:selenide:6.13.0',
-            "io.appium:java-client:8.4.0",
+            'com.codeborne:selenide:7.4.1',
 
     )
 }
@@ -65,20 +64,16 @@ test{
     useJUnitPlatform()
 }
 
-task web(type: Test) {
-    useJUnitPlatform {
-        includeTags("web")
-    }
-}
-
 task api(type: Test) {
     useJUnitPlatform {
         includeTags("api")
     }
 }
 
-task mobile(type: Test) {
+task web(type: Test) {
     useJUnitPlatform {
-        includeTags("mobile")
+        includeTags("web")
     }
 }
+
+

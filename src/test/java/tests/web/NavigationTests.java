@@ -1,7 +1,7 @@
 package tests.web;
 
-import Enumeration.MainPageSectionsName;
-import Enumeration.FaqPageSectionsNames;
+import enumeration.MainPageSectionsName;
+import enumeration.FaqPageSectionsNames;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
