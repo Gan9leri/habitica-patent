@@ -27,4 +27,9 @@ public class Specs {
             .log(LogDetail.ALL)
             .build();
 
+    public static ResponseSpecification responseSpec201 = new ResponseSpecBuilder()
+            .expectStatusCode(201)
+            .log(LogDetail.ALL)
+            .build();
+
 }
