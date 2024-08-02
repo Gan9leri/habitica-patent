@@ -6,17 +6,20 @@ import org.aeonbits.owner.Config;
 })
 
 public interface WebConfig extends Config {
-    @DefaultValue("https://habitica.com")
-    String baseUrl();
-
+    @Key("browser")
     @DefaultValue("chrome")
     String browser();
 
+    @Key("browserSize")
     @DefaultValue("1920x1080")
     String browserSize();
 
-    @DefaultValue("127")
+    @Key("browserVersion")
+    @DefaultValue("128")
     String browserVersion();
+
+    @DefaultValue("https://habitica.com")
+    String baseUrl();
 
     @DefaultValue("https://habitica.com")
     String baseURI();
@@ -24,9 +27,9 @@ public interface WebConfig extends Config {
     @DefaultValue("/api")
     String basePath();
 
-    @DefaultValue("false")
-    boolean isRemote();
-
     @DefaultValue("https://habitica.com")
     String remoteUrl();
+
+    @DefaultValue("false")
+    boolean isRemote();
 }
