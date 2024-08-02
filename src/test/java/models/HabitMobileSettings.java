@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "auth")
 public class HabitMobileSettings {
-
         String apiId, apiToken;
         public HabitMobileSettings(String apiId, String apiToken) {
             this.apiId = apiId;

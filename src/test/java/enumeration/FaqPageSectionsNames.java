@@ -1,5 +1,4 @@
 package enumeration;
-
 import lombok.Getter;
 
 @Getter
@@ -8,7 +7,6 @@ public enum FaqPageSectionsNames {
     GROUP_PLANS ("Групповые планы", "https://habitica.com/static/plans"),
     FOR_PRESS("Для прессы", "https://habitica.com/static/press-kit"),
     CONTACT ("Обратная связь", "https://habitica.com/static/contact");
-
     private final String value;
     private final String link;
 
@@ -16,5 +14,4 @@ public enum FaqPageSectionsNames {
         this.value = value;
         this.link = link;
     }
-
 }

@@ -2,11 +2,10 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${envWeb}.properties",
+        "classpath:${env}.properties",
 })
 
 public interface WebConfig extends Config {
-
     @DefaultValue("https://habitica.com")
     String baseUrl();
 
@@ -30,5 +29,4 @@ public interface WebConfig extends Config {
 
     @DefaultValue("https://habitica.com")
     String remoteUrl();
-
 }

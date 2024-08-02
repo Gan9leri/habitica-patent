@@ -1,5 +1,4 @@
 package tests.web;
-
 import data.DataGeneration;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -14,7 +13,6 @@ import pages.PartyPage;
 @Owner("Овсянников Александр")
 @Feature("Party")
 public class PartyTests extends TestBase{
-
     DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
 
@@ -25,7 +23,7 @@ public class PartyTests extends TestBase{
         String message = data.message;
         partyPage.openPartyPage()
                 .enteringAMessageInChat(message)
-                .sendingAMessage()
+                .clickSendButton()
                 .checkPartyChat(message);
     }
 }

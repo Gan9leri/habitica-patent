@@ -1,10 +1,8 @@
 package enumeration;
-
 import lombok.Getter;
 
 @Getter
 public enum MainPageSectionsName {
-
     ISSUES ("Задачи","https://habitica.com/"),
     INVENTORY ("Инвентарь", "https://habitica.com/inventory/items"),
     SHOP ("Лавки", "https://habitica.com/shops/market"),
@@ -12,8 +10,6 @@ public enum MainPageSectionsName {
     GROUP ("Группа", "https://habitica.com/group-plans"),
     CHALLENGES ("Испытания", "https://habitica.com/challenges/myChallenges"),
     FAQ ("Помощь", "https://habitica.com/static/faq");
-
-
     private final String value;
     private final String link;
 
@@ -21,7 +17,4 @@ public enum MainPageSectionsName {
         this.value = value;
         this.link = link;
     }
-
-
-
 }

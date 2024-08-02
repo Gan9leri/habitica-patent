@@ -1,5 +1,4 @@
 package tests.api;
-
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 import io.qameta.allure.Feature;
@@ -12,28 +11,25 @@ import static authorization.Authorization.getAuthResponse;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
 
-
 @DisplayName("Тесты на список тэгов")
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("Tags")
 public class TagsTests extends TestBase{
-
     @DisplayName("Тест на получение списка тэгов")
     @Test
     void getTagsTest(){
-
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();
         TagResponseBodyModel response =
                 step("Отправка GET запроса на получение тэгов", () ->
-                    given(RequestSpec)
+                    given(requestSpec)
                         .when()
                         .header("X-Api-User", xApiUser)
                         .header("X-Api-Key", xApiKey)
                         .get("/v3/tags")
                         .then()
-                        .spec(ResponseSpec200)
+                        .spec(responseSpec200)
                         .extract().as(TagResponseBodyModel.class)
                 );
         int size = response.getData().size();

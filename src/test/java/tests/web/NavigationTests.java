@@ -1,5 +1,4 @@
 package tests.web;
-
 import enumeration.MainPageSectionsName;
 import enumeration.FaqPageSectionsNames;
 import extensions.WithLogin;
@@ -17,7 +16,6 @@ import pages.OverviewPage;
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 public class NavigationTests extends TestBase{
-
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();
@@ -30,7 +28,7 @@ public class NavigationTests extends TestBase{
     void openCommunityGuidelinesTest(){
 
         mainPage.openMainPage()
-                .cummunityRulesClick()
+                .clickCummunityRules()
                 .moveToNewTab()
                 .checkUrl("https://habitica.com/static/community-guidelines")
                 .checkCommunityRulesTitle(" Добро пожаловать в страну Habitica! ");
@@ -41,7 +39,7 @@ public class NavigationTests extends TestBase{
     @WithLogin
     void navigationToMainPageTest(){
         overviewPage.openOverviewPage()
-                    .logoButtonClick();
+                    .clickLogoButton();
         mainPage.checkUrl("https://habitica.com/");
     }
 
@@ -51,7 +49,7 @@ public class NavigationTests extends TestBase{
     void mainPageNavigationTest() {
         mainPage.openMainPage();
         for (MainPageSectionsName item : mainPageChapters) {
-            mainPage.menuCollapseElementClick(item.getValue())
+            mainPage.clickMenuCollapseElement(item.getValue())
                     .checkUrl(item.getLink());
         }
     }
@@ -62,7 +60,7 @@ public class NavigationTests extends TestBase{
     void faqPageNavigationTest(){
         faqPage.openFaqPage();
         for (FaqPageSectionsNames item: faqPageChapters) {
-            faqPage.navBarChapterClick(item.getValue())
+            faqPage.clickNavBarChapter(item.getValue())
                     .checkUrl(item.getLink());
 
         }

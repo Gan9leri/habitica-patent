@@ -1,5 +1,4 @@
 package pages;
-
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
@@ -8,7 +7,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PartyPage {
-
     SelenideElement textArea = $("textarea[placeholder='Введите здесь сообщение для членов команды']"),
                     sendButton = $(byTagAndText("button", "Отправить")),
                     containerField = $(".container-fluid");
@@ -26,12 +24,12 @@ public class PartyPage {
     }
 
     @Step("Нажатие на кнопку Отправить")
-    public PartyPage sendingAMessage(){
+    public PartyPage clickSendButton(){
         sendButton.click();
         return this;
     }
 
-    @Step("Проверка, что сообщение отправлено")
+    @Step("Проверка чата")
     public PartyPage checkPartyChat(String value){
         containerField.shouldHave(text(value));
         return this;

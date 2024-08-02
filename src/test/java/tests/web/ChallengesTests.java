@@ -1,5 +1,4 @@
 package tests.web;
-
 import config.AuthConfig;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -15,7 +14,6 @@ import pages.ChallengesPage;
 @Owner("Овсянников Александр")
 @Feature("Challenges")
 public class ChallengesTests extends TestBase {
-
     ChallengesPage challengesPage = new ChallengesPage();
     AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
 

@@ -1,5 +1,4 @@
 package tests.api;
-
 import config.AuthConfig;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -30,12 +29,12 @@ public class LoginTests extends TestBase {
         request.setPassword(authConfig.password());
         AuthResponseBodyModel response =
                 step("Отправка POST запроса на авторизацию ", () ->
-                    given(RequestSpec)
+                    given(requestSpec)
                         .body(request)
                         .when()
                         .post("/v4/user/auth/local/login")
                         .then()
-                        .spec(ResponseSpec200)
+                        .spec(responseSpec200)
                         .extract().as(AuthResponseBodyModel.class)
                 );
         step("Проверка успешности авторизации", () ->
@@ -51,12 +50,12 @@ public class LoginTests extends TestBase {
         request.setPassword("error");
         NotAuthRequestBodyModel response =
                 step("Отправка POST запроса на авторизацию ", () ->
-                        given(RequestSpec)
+                        given(requestSpec)
                         .body(request)
                         .when()
                         .post("/v4/user/auth/local/login")
                         .then()
-                        .spec(ResponseSpec401)
+                        .spec(responseSpec401)
                         .extract().as(NotAuthRequestBodyModel.class)
                 );
         step("Проверка неуспешности авторизации", () ->

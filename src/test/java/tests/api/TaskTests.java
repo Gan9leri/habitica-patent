@@ -1,5 +1,4 @@
 package tests.api;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import data.DataGeneration;
 import io.qameta.allure.Feature;
@@ -22,22 +21,19 @@ import static specs.Specs.*;
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
 public class TaskTests extends TestBase{
-
-    @DisplayName("Тест на удаление задачи")
     @Test
-    void deleteTest() throws IOException {
-        AuthResponseBodyModel authResponse = getAuthResponse();
+    @DisplayName("Тест на удаление задачи")
+    void deleteTaskTest() throws IOException {
         String taskId = createTask();
-        System.out.println(taskId);
         DeleteTaskResponseBodyModel response =
                 step("Отправка DELETE запроса на удаление задачи", () ->
-                    given(RequestSpec)
+                    given(requestSpec)
                             .header("X-Api-Key", getAuthResponse().getData().getApiToken())
                             .header("X-Api-User", getAuthResponse().getData().getId())
                             .when()
                             .delete("v4/tasks/" + taskId)
                             .then()
-                            .spec(ResponseSpec200)
+                            .spec(responseSpec200)
                             .extract().as(DeleteTaskResponseBodyModel.class)
                 );
         step("Проверка успешности удаления задачи", () ->
@@ -45,29 +41,31 @@ public class TaskTests extends TestBase{
         );
     }
 
-
     @Test
-    void addApiTask() throws IOException {
+    @DisplayName("Тест на добавление задачи через Api")
+    void addTaskApiTest() throws IOException {
         DataGeneration data = new DataGeneration();
-        String text = data.task;
-        String id = data.taskId;
         ObjectMapper om = new ObjectMapper();
         PostCreateTaskUserRequestModel[] request = om.readValue(
                 new File("src/test/resources/request/PostAddTask.json"),
                 PostCreateTaskUserRequestModel[].class
         );
-        request[0].setText(text);
-        request[0].set_id(id);
+        request[0].setText(data.task);
+        request[0].set_id(data.taskId);
         PostCreateTaskUserResponseModel response =
-        given(RequestSpec)
-                .when()
-                .body(request)
-                .header("X-Api-Key", getAuthResponse().getData().getApiToken())
-                .header("X-Api-User", getAuthResponse().getData().getId())
-                .post("/v4/tasks/user")
-                .then()
-                .spec(responseSpec201)
-                .extract().as(PostCreateTaskUserResponseModel.class);
-        assertThat(response.getSuccess()).isEqualTo(true);
+                step("Отправка POST запроса на добавление задачи", () ->
+                    given(requestSpec)
+                            .when()
+                            .body(request)
+                            .header("X-Api-Key", getAuthResponse().getData().getApiToken())
+                            .header("X-Api-User", getAuthResponse().getData().getId())
+                            .post("/v4/tasks/user")
+                            .then()
+                            .spec(responseSpec201)
+                            .extract().as(PostCreateTaskUserResponseModel.class)
+                );
+        step("Проверка успешности добавления задачи", () ->
+            assertThat(response.getSuccess()).isEqualTo(true)
+        );
     }
 }

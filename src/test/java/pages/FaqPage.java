@@ -1,9 +1,6 @@
 package pages;
-
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -20,7 +17,7 @@ public class FaqPage {
     }
 
     @Step("Нажатие на кнопку раздела")
-    public FaqPage navBarChapterClick(String value){
+    public FaqPage clickNavBarChapter(String value){
         navigationBar.filter(visible).find(text(value)).click();
         return this;
     }
@@ -30,5 +27,4 @@ public class FaqPage {
         webdriver().shouldHave(currentFrameUrl(value));
         return this;
     }
-
 }

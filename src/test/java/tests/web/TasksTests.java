@@ -1,5 +1,4 @@
 package tests.web;
-
 import data.DataGeneration;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -9,13 +8,11 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
-
 @DisplayName("Тесты для главной страницы")
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 public class TasksTests extends TestBase{
-
     DataGeneration data = new DataGeneration();
     MainPage mainPage = new MainPage();
 
@@ -25,10 +22,10 @@ public class TasksTests extends TestBase{
     void addTaskTest(){
         String task = data.task;
         mainPage.openMainPage()
-                .addTaskClick()
-                .itemTaskSelection()
+                .clickAddTaskButton()
+                .selectItemTask()
                 .inputTaskName(task)
-                .createButtonClick()
-                .checkingTasksContainer(task);
+                .clickCreateButton()
+                .checkTasksContainer(task);
     }
 }
