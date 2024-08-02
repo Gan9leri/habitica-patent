@@ -18,18 +18,23 @@ public interface WebConfig extends Config {
     @DefaultValue("128")
     String browserVersion();
 
-    @DefaultValue("https://habitica.com")
-    String baseUrl();
-
-    @DefaultValue("https://habitica.com")
-    String baseURI();
-
-    @DefaultValue("/api")
-    String basePath();
-
+    @Key("remoteUrl")
     @DefaultValue("https://habitica.com")
     String remoteUrl();
 
+    @Key("baseUrl")
+    @DefaultValue("https://habitica.com")
+    String baseUrl();
+
+    @Key("baseUri")
+    @DefaultValue("https://habitica.com")
+    String baseURI();
+
+    @Key("basePath")
+    @DefaultValue("/api")
+    String basePath();
+
+    @Key("isRemote")
     @DefaultValue("false")
     boolean isRemote();
 }
