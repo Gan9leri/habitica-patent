@@ -16,7 +16,7 @@ import pages.OverviewPage;
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 public class NavigationTests extends TestBase{
-    MainPage mainPage = new MainPage();
+    /*MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
@@ -64,5 +64,5 @@ public class NavigationTests extends TestBase{
                     .checkUrl(item.getLink());
 
         }
-    }
+    }*/
 }

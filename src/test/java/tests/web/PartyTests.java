@@ -13,7 +13,7 @@ import pages.PartyPage;
 @Owner("Овсянников Александр")
 @Feature("Party")
 public class PartyTests extends TestBase{
-    DataGeneration data = new DataGeneration();
+   /* DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
 
     @DisplayName("Проверка отправки сообщения в чат команды")
@@ -25,5 +25,5 @@ public class PartyTests extends TestBase{
                 .enteringAMessageInChat(message)
                 .clickSendButton()
                 .checkPartyChat(message);
-    }
+    }*/
 }

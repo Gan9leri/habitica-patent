@@ -23,9 +23,9 @@ public class TestBase {
         Configuration.browserVersion = webConfig.browserVersion();
         RestAssured.baseURI = webConfig.baseURI();
         RestAssured.basePath = webConfig.basePath();
-       // if(webConfig.isRemote()){
+        if(webConfig.isRemote()) {
             Configuration.remote = webConfig.remoteUrl();
-      //  }
+        }
         Configuration.pageLoadStrategy = "eager";
         //Configuration.holdBrowserOpen = true;
         DesiredCapabilities capabilities = new DesiredCapabilities();

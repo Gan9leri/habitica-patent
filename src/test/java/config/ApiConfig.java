@@ -6,11 +6,11 @@ import org.aeonbits.owner.Config;
 })
 
 public interface ApiConfig extends Config {
-    @Key("baseUri")
+   // @Key("baseUri")
     @DefaultValue("https://habitica.com")
     String baseURI();
 
-    @Key("basePath")
+  //  @Key("basePath")
     @DefaultValue("/api")
     String basePath();
 }

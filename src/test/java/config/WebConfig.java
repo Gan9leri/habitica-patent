@@ -22,15 +22,15 @@ public interface WebConfig extends Config {
     @DefaultValue("https://habitica.com")
     String remoteUrl();
 
-    @Key("baseUrl")
+    //@Key("baseUrl")
     @DefaultValue("https://habitica.com")
     String baseUrl();
 
-    @Key("baseUri")
+    //@Key("baseUri")
     @DefaultValue("https://habitica.com")
     String baseURI();
 
-    @Key("basePath")
+    //@Key("basePath")
     @DefaultValue("/api")
     String basePath();
 
