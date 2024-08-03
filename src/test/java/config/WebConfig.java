@@ -33,8 +33,4 @@ public interface WebConfig extends Config {
     //@Key("basePath")
     @DefaultValue("/api")
     String basePath();
-
-    @Key("isRemote")
-    @DefaultValue("false")
-    boolean isRemote();
 }
