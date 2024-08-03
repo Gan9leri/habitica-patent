@@ -40,10 +40,12 @@ public class TestBase {
 
     @AfterEach
         void afterEach() {
-       /* Attach.screenshotAs("Last screenshot");
+        Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();*/
+        if (System.getProperty("host", "selenoid").equals("selenoid")) {
+            Attach.addVideo();
+        }
         closeWebDriver();
     }
 }
