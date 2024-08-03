@@ -18,7 +18,7 @@ public interface WebConfig extends Config {
     @DefaultValue("128")
     String browserVersion();
 
-    @Key("remoteUrl")
+    @Key("host")
     //@DefaultValue("https://habitica.com")
     String remoteUrl();
 
