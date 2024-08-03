@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
 
 public interface WebConfig extends Config {
     @Key("browser")
-    @DefaultValue("firefox")
+    @DefaultValue("chrome")
     String browser();
 
     @Key("browserSize")
