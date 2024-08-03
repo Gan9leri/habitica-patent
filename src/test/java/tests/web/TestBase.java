@@ -32,6 +32,8 @@ public class TestBase {
                     "enableVideo", true
             ));
             Configuration.browserCapabilities = capabilities;
+            Configuration.timeout = 20000;
+            Configuration.pageLoadTimeout = 100000;
         }
 
         //Configuration.holdBrowserOpen = true;
