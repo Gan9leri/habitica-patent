@@ -12,13 +12,13 @@ public class FaqPage {
 
     @Step("Открытие страницы Faq")
     public FaqPage openFaqPage(){
-        open("https://habitica.com/static/faq");
+        open("/static/faq");
         return this;
     }
 
     @Step("Нажатие на кнопку раздела")
-    public FaqPage clickNavBarChapter(String value){
-        navigationBar.filter(visible).find(text(value)).click();
+    public FaqPage clickNavBarChapter(int value){
+        navigationBar.get(value).click();
         return this;
     }
 

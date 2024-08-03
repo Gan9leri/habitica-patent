@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PartyPage {
-    SelenideElement textArea = $("textarea[placeholder='Введите здесь сообщение для членов команды']"),
-                    sendButton = $(byTagAndText("button", "Отправить")),
+    SelenideElement textArea = $("textarea"),
+                    sendButton = $(".send-chat"),
                     containerField = $(".container-fluid");
 
     @Step("Открытие страницы с командой")

@@ -23,17 +23,19 @@ public class TestBase {
         Configuration.browserVersion = webConfig.browserVersion();
         RestAssured.baseURI = webConfig.baseURI();
         RestAssured.basePath = webConfig.basePath();
-        if(webConfig.isRemote()) {
-            Configuration.remote = webConfig.remoteUrl();
-        }
         Configuration.pageLoadStrategy = "eager";
+        if(System.getProperty("host", "selenoid").equals("selenoid")) {
+            Configuration.remote = webConfig.remoteUrl();
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true
+            ));
+            Configuration.browserCapabilities = capabilities;
+        }
+
         //Configuration.holdBrowserOpen = true;
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
+
     }
 
     @AfterEach

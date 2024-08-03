@@ -2,18 +2,19 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 public class MainPage {
-    SelenideElement addTaskButton = $(byTagAndText("div", "Добавить задачу")),
-                    itemTask =  $(byTagAndText("div", "задачу")),
+    SelenideElement addTaskButton = $("#create-task-btn"),
+                    itemTask = $("div.px-2:nth-child(3) > div:nth-child(2)"),
                     inputArea =  $(".task-purple-modal-input"),
-                    createButton = $(byTagAndText("button", "Создать")),
-                    communityRulesButton = $(byTagAndText("a", "Правила сообщества")),
+                    createButton = $("button.justify-content-center:nth-child(2)"),
+                    communityRulesButton = $("[href='/static/community-guidelines']"),
                     communityRulesTitle = $("#welcome");
     ElementsCollection menuCollapse = $("#menu_collapse").$$("li");
 
@@ -55,7 +56,8 @@ public class MainPage {
 
     @Step("Нажатие на кнопку Правила сообщества")
     public MainPage clickCummunityRules(){
-        communityRulesButton.click();
+        communityRulesButton.scrollIntoView(true).click();
+
         return this;
     }
 
@@ -78,8 +80,8 @@ public class MainPage {
     }
 
     @Step("Нажатие на кнопку раздела")
-    public MainPage clickMenuCollapseElement(String value){
-        menuCollapse.filter(visible).find(text(value)).click();
+    public MainPage clickMenuCollapseElement(int value){
+        menuCollapse.get(value).click();
         return this;
     }
 }

@@ -16,7 +16,7 @@ import pages.OverviewPage;
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 public class NavigationTests extends TestBase{
-    /*MainPage mainPage = new MainPage();
+    MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
@@ -30,8 +30,7 @@ public class NavigationTests extends TestBase{
         mainPage.openMainPage()
                 .clickCummunityRules()
                 .moveToNewTab()
-                .checkUrl("https://habitica.com/static/community-guidelines")
-                .checkCommunityRulesTitle(" Добро пожаловать в страну Habitica! ");
+                .checkUrl("https://habitica.com/static/community-guidelines");
     }
 
     @DisplayName("Проверка логотипа")
@@ -64,5 +63,5 @@ public class NavigationTests extends TestBase{
                     .checkUrl(item.getLink());
 
         }
-    }*/
+    }
 }

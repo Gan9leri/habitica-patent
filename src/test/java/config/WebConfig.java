@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
 
 public interface WebConfig extends Config {
     @Key("browser")
-    @DefaultValue("chrome")
+    @DefaultValue("firefox")
     String browser();
 
     @Key("browserSize")
@@ -19,7 +19,7 @@ public interface WebConfig extends Config {
     String browserVersion();
 
     @Key("remoteUrl")
-    @DefaultValue("https://habitica.com")
+    //@DefaultValue("https://habitica.com")
     String remoteUrl();
 
     //@Key("baseUrl")
