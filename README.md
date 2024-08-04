@@ -173,7 +173,7 @@ gradle clean test -Dhost=selenoid
 >Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`.
 >Сборка с параметрами позволяет перед запуском задать нужные параметры для сборки:
  
-<img src="images/screenshots/buildWithParametres.png">
+<img src="images/screenshots/buildWithParametres.PNG">
 
 ## Интеграция с <b><a target="_blank" href=" ">Allure report</a></b>
 #### Диаграммы прохождения тестов
