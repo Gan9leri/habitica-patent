@@ -189,7 +189,7 @@ gradle clean test -Dhost=selenoid
 <img src="images/screenshots/">
 
 
-## Интеграция с <b><a target="_blank" href=" ">Allure TestOps</a></b>
+## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4349">Allure TestOps</a></b>
 
 >Диаграммы прохождения тестов
 >
