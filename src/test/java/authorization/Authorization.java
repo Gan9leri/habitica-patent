@@ -38,6 +38,6 @@ public class Authorization {
         mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String authData = mapper.writeValueAsString(habitMobileSettings);
         open("/static/img/bits.d0926ee2.svg");
-        Selenide.localStorage().setItem("habit-mobile-settings", authData);
+        Selenide.localStorage().setItem("habit-tests.mobile-settings", authData);
     }
 }

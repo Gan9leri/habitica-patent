@@ -19,11 +19,12 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static specs.Specs.*;
 
-@DisplayName("Тесты на работу с задачами")
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
+@DisplayName("Тесты на работу с задачами")
 public class TaskTests extends TestBase {
+
     @Test
     @DisplayName("Тест на удаление задачи")
     void deleteTaskTest() throws IOException {

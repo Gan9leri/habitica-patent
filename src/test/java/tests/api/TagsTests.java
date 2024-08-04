@@ -14,13 +14,14 @@ import static authorization.Authorization.getAuthResponse;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
 
-@DisplayName("Тесты на список тэгов")
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("Tags")
+@DisplayName("Тесты на список тэгов")
 public class TagsTests extends TestBase {
-    @DisplayName("Тест на получение списка тэгов")
+
     @Test
+    @DisplayName("Тест на получение списка тэгов")
     void getTagsTest() {
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();

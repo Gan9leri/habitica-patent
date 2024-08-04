@@ -1,4 +1,4 @@
-package mobile;
+package tests.mobile;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;

@@ -12,10 +12,10 @@ import pages.FaqPage;
 import pages.MainPage;
 import pages.OverviewPage;
 
-@DisplayName("Тесты навигации по разделам сайта")
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
+@DisplayName("Тесты навигации по разделам сайта")
 public class NavigationTests extends TestBase {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
@@ -23,9 +23,9 @@ public class NavigationTests extends TestBase {
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
     FaqPageSectionsNames[] faqPageChapters = FaqPageSectionsNames.values();
 
-    @DisplayName("Проверка возможности перехода к Правилам сообщества")
     @Test
     @WithLogin
+    @DisplayName("Проверка возможности перехода к Правилам сообщества")
     void openCommunityGuidelinesTest() {
 
         mainPage.openMainPage()
@@ -34,18 +34,18 @@ public class NavigationTests extends TestBase {
                 .checkUrl("https://habitica.com/static/community-guidelines");
     }
 
-    @DisplayName("Проверка логотипа")
     @Test
     @WithLogin
+    @DisplayName("Проверка логотипа")
     void navigationToMainPageTest() {
         overviewPage.openOverviewPage()
                 .clickLogoButton();
         mainPage.checkUrl("https://habitica.com/");
     }
 
-    @DisplayName("Навигация по разделам главной страницы")
     @Test
     @WithLogin
+    @DisplayName("Навигация по разделам главной страницы")
     void mainPageNavigationTest() {
         mainPage.openMainPage();
         for (MainPageSectionsName item : mainPageChapters) {
@@ -54,9 +54,9 @@ public class NavigationTests extends TestBase {
         }
     }
 
-    @DisplayName("Навигация по разделам Faq")
     @Test
     @WithLogin
+    @DisplayName("Навигация по разделам Faq")
     void faqPageNavigationTest() {
         faqPage.openFaqPage();
         for (FaqPageSectionsNames item : faqPageChapters) {

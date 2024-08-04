@@ -241,5 +241,5 @@ gradle clean test -Denv=remote
 
 > К каждому мобильному тесту, выполняемому в Browserstack, к отчету прилагается видео
 <p align="center">
-  <img src="images/video/mobile-test.gif">
+  <img src="images/video/tests.mobile-test.gif">
 </p>

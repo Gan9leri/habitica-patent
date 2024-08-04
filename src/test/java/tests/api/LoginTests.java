@@ -16,14 +16,15 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static specs.Specs.*;
 
-@DisplayName("Тесты на авторизацию через Api")
+
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
+@DisplayName("Тесты на авторизацию через Api")
 public class LoginTests extends TestBase {
 
-    @DisplayName("Позитивный тест на авторизацию")
     @Test
+    @DisplayName("Позитивный тест на авторизацию")
     void loginTest() {
         AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         AuthRequestBodyModel request = new AuthRequestBodyModel();
@@ -44,8 +45,8 @@ public class LoginTests extends TestBase {
         );
     }
 
-    @DisplayName("Негативный тест на авторизацию")
     @Test
+    @DisplayName("Негативный тест на авторизацию")
     void negativeLoginTest() {
         AuthRequestBodyModel request = new AuthRequestBodyModel();
         request.setUsername("error");

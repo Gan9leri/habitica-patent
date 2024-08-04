@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PartyPage;
 
-@DisplayName("Тесты для страницы команды")
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Party")
+@DisplayName("Тесты для страницы команды")
 public class PartyTests extends TestBase {
     DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
 
-    @DisplayName("Проверка отправки сообщения в чат команды")
     @Test
     @WithLogin
+    @DisplayName("Проверка отправки сообщения в чат команды")
     void sendingAMessageToTeamChatTest() {
         String message = data.message;
         partyPage.openPartyPage()
