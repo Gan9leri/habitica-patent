@@ -24,9 +24,9 @@ public class TestBase {
         RestAssured.baseURI = webConfig.baseURI();
         RestAssured.basePath = webConfig.basePath();
         Configuration.pageLoadStrategy = "eager";
-        if(System.getProperty("host", "selenoid").equals("selenoid")) {
-            //Configuration.remote = webConfig.remoteUrl();
-            Configuration.remote ="https://user1:1234@" + System.getProperty("selenoidUrl", "selenoid.autotests.cloud") + "/wd/hub";
+        //if(System.getProperty("host", "selenoid").equals("selenoid")) {
+            Configuration.remote = webConfig.remoteUrl();
+            //Configuration.remote ="https://user1:1234@" + System.getProperty("selenoidUrl", "selenoid.autotests.cloud") + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
@@ -35,7 +35,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.timeout = 20000;
             Configuration.pageLoadTimeout = 100000;
-        }
+        //}
 
         //Configuration.holdBrowserOpen = true;
 
