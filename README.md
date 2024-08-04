@@ -175,51 +175,49 @@ gradle clean test -Dhost=selenoid
  
 <img src="images/screenshots/">
 
-## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/13/allure/">Allure report</a></b>
+## Интеграция с <b><a target="_blank" href=" ">Allure report</a></b>
 #### Диаграммы прохождения тестов
-`ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и количеством успешных, упавших и сломавшихся в процессе выполнения тестов <br/>
-`TREND` - отображает тенденцию выполнения тестов для всех запусков <br/>
+`ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и количеством успешных и провалившихся тестов <br/>
+`TREND` - отображает тенденцию выполнения тестов<br/>
 `SUITES` - отображает распределение тестов по сьютам <br/>
 `CATEGORIES` - отображает распределение неудачных тестов по типам дефектов
 
-<img src="images/screenshots/allure-main-report.png">
+<img src="images/screenshots/">
 
 #### Развернутый результат прохождения тестов:
-1. Общий список автотестов
-2. Содержание автотеста
-3. Вложения
-<img src="images/screenshots/allure-suites.png">
+
+<img src="images/screenshots/">
 
 
-## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/3876/dashboards">Allure TestOps</a></b>
+## Интеграция с <b><a target="_blank" href=" ">Allure TestOps</a></b>
 
 >Диаграммы прохождения тестов
 >
-<img src="images/screenshots/allure-testops-dashboards.png">
+<img src="images/screenshots/">
 
-## Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1005">Jira</a></b>
+## Интеграция с <b><a target="_blank" href=" ">Jira</a></b>
 
 >В Jira создана задача
 >
-<img src="images/screenshots/jira-integration.png">
+<img src="images/screenshots/">
 
->В разделе `Allure:Test Cases` отображаются интегрированные автоматизированные и ручные тесты
-<img src="images/screenshots/jira-with-allure-test-cases.png">
+>В разделе `Allure:Test Cases` отображаются тесты
+<img src="images/screenshots/">
 
 ## Уведомления в Telegram с использованием бота
 
 > Бот, созданный в Telegram, после завершения сборки отправляет сообщение с отчетом о прохождении тестов
 > 
-<img src="images/screenshots/telegram-notification.png">
+<img src="images/screenshots/">
 
 ## Пример выполнения теста в Selenoid
 
 > К каждому UI-тесту в отчете прилагается видео
 <p align="center">
-  <img src="images/video/ui-test.gif">
+  <img src="images/video/">
 </p>
 
 > К каждому мобильному тесту, выполняемому в Browserstack, к отчету прилагается видео
 <p align="center">
-  <img src="images/video/tests.mobile-test.gif">
+  <img src="images/video/">
 </p>
