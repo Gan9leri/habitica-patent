@@ -111,32 +111,29 @@ flowchart LR
 
 Для запуска следует открыть IntelliJ IDEA и выполнить в терминале:
 ```
-gradle clean test
-```
-
-или 
-
-```
-gradle clean test -Denv=local
+gradle clean test -Dhost=habitica
 ```
 
 #### WEB
 
 ```
-gradle clean web
+gradle clean web -Dhost=habitica
 ```
-
 
 #### API
 ```
-gradle clean api 
+gradle clean api -Dhost=habitica
 ```
 
 #### Mobile
 
 ```
-gradle clean android -DenvMobile=${ENV_MOBILE}
+gradle clean mobile -DdeviceHost=real
 ```
+```
+gradle clean mobile -DdeviceHost=emulation
+```
+
 Для запуска мобильных тестов нужно определить значение envMobile:
 - [ ] <code>-DenvMobile=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
 - [ ] <code>-DenvMobile=emulator</code> : тесты будут запущены в эмуляторе, созданном средствами Appium Server & Appium Inspector. <br/> <a target="_blank" href="https://autotest.how/appium-setup-for-local-android-tutorial"> Инструкция по настройке </a> 
