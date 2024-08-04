@@ -170,7 +170,7 @@ gradle clean test -Dhost=selenoid
 
 ## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/">Jenkins</a></b>
 
->Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`
+>Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`.
 >Сборка с параметрами позволяет перед запуском задать нужные параметры для сборки:
  
 <img src="images/screenshots/">
