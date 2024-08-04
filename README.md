@@ -99,11 +99,11 @@ flowchart LR
     C --> E[web]
     C --> F[api]
     C --> G[mobile]
-    E --> H[-DenvWeb=local]
-    E --> I[-DenvWeb=remote]
-    G --> J[-DenvMobile=browserstack]
-    G --> K[-DenvMobile=emulator]
-    G --> L[-DenvMobile=localDevice]
+    E --> H[-Dhost=habitica]
+    E --> I[-Dhost=selenoid]
+    G --> J[-DdeviceHost=browserstack]
+    G --> K[-DdeviceHost=emulator]
+    G --> L[-DdeviceHost=localDevice]
 ```
 
 ### Локальный запуск тестов
