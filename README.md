@@ -157,15 +157,15 @@ gradle allureServe
 Тесты можно запустить из терминала IntelliJ IDEA, а выполнены они будут в удаленно запущенном браузере в Docker-контейнере Selenoid:
 
 ```
-gradle clean test -Denv=remote
+gradle clean test -Dhost=selenoid
 ```
 
 Параметры, которыми можно управлять:
 ```
 -DbrowserName - наименование браузера. По умолчанию chrome
--DbrowserVersion - номер версии браузера. По умолчанию 100.0
 -DbrowserSize - размер окна браузера. По умолчанию 1980x1080
--DremoteUrl - адрес удаленного сервера, на котором будут запускаться тесты
+-DbrowserVersion - номер версии браузера. По умолчанию 100.0
+-DbaseUrl - адрес Habitica
 ```
 
 ## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/">Jenkins</a></b>
