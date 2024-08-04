@@ -126,14 +126,18 @@ gradle clean api -Dhost=habitica
 ```
 
 #### Mobile
-
+Для запуска тестов на реальном устройстве:
 ```
 gradle clean mobile -DdeviceHost=real
 ```
+Для запуска тестов на эмуляторе
 ```
 gradle clean mobile -DdeviceHost=emulation
 ```
-
+Для запуска тестов на удаленной ферме:
+```
+gradle clean mobile -DdeviceHost=browserstack
+```
 Для запуска мобильных тестов нужно определить значение envMobile:
 - [ ] <code>-DenvMobile=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
 - [ ] <code>-DenvMobile=emulator</code> : тесты будут запущены в эмуляторе, созданном средствами Appium Server & Appium Inspector. <br/> <a target="_blank" href="https://autotest.how/appium-setup-for-local-android-tutorial"> Инструкция по настройке </a> 
