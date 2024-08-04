@@ -1,7 +1,7 @@
 <h1>Проект автоматизации тестирования <a target="_blank" href="https://habitica.com/"> Habitica.com </a> </h1>
 
 <p align="center">
-a href="https://habitica.com/"><img src="images/logo/habitica_logo.png"  >
+<a href="https://habitica.com/"><img src="images/logo/habitica_logo.png"  >
 </p>
 
 ## Содержание
