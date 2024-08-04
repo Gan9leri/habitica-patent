@@ -171,14 +171,9 @@ gradle clean test -Dhost=selenoid
 ## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/">Jenkins</a></b>
 
 >Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`
-
-<img src="images/screenshots/jenkins-project.png">
-
-> Сборка с параметрами позволяет перед запуском задать нужные параметры для сборки:
-
-<p align="center">
-<img src="images/screenshots/jenkins-build.png"/>
-</p>
+>Сборка с параметрами позволяет перед запуском задать нужные параметры для сборки:
+ 
+<img src="images/screenshots/">
 
 ## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/13/allure/">Allure report</a></b>
 #### Диаграммы прохождения тестов
