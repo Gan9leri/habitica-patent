@@ -163,7 +163,7 @@ gradle clean test -Dhost=selenoid
 Параметры, которыми можно управлять:
 ```
 -DbrowserName - наименование браузера. По умолчанию chrome
--DbrowserSize - размер окна браузера. По умолчанию 1980x1080
+-DbrowserSize - размер окна браузера. По умолчанию 1920x1080
 -DbrowserVersion - номер версии браузера. По умолчанию 100.0
 -DbaseUrl - адрес Habitica
 ```
