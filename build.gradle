@@ -33,7 +33,6 @@ compileTestJava {
 
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:7.4.1',
             'io.qameta.allure:allure-selenide:2.27.0',
             'org.junit.jupiter:junit-jupiter:5.10.0',
             'io.rest-assured:rest-assured:5.3.1',
@@ -43,7 +42,9 @@ dependencies {
             'org.aeonbits.owner:owner:1.0.4',
             'org.assertj:assertj-core:3.25.3',
             'com.github.javafaker:javafaker:1.0.2',
-            'commons-io:commons-io:2.11.0'
+            'commons-io:commons-io:2.11.0',
+            'com.codeborne:selenide:6.13.0',
+            "io.appium:java-client:8.4.0",
     )
 }
 
@@ -71,6 +72,12 @@ task api(type: Test) {
 task web(type: Test) {
     useJUnitPlatform {
         includeTags("web")
+    }
+}
+
+task mobile(type: Test) {
+    useJUnitPlatform {
+        includeTags("mobile")
     }
 }
 

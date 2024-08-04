@@ -19,6 +19,13 @@ public class Attach {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
+    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+    public static String addVideo(String sessionId) {
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+                + Browserstack.videoUrl(sessionId)
+                + "' type='video/mp4'></video></body></html>";
+    }
+
     @Attachment(value = "Page source", type = "text/plain")
     public static byte[] pageSource() {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
@@ -44,7 +51,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://"+System.getProperty("selenoid","selenoid.autotests.cloud")+"/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
