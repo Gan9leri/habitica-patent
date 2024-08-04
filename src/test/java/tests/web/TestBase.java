@@ -26,7 +26,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         //if(System.getProperty("host", "selenoid").equals("selenoid")) {
             Configuration.remote = webConfig.remoteUrl();
-            System.out.println(Configuration.remote);
+            System.out.println("remote_url=" + Configuration.remote);
             //Configuration.remote ="https://user1:1234@" + System.getProperty("selenoidUrl", "selenoid.autotests.cloud") + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
