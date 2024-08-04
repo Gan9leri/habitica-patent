@@ -138,10 +138,6 @@ gradle clean mobile -DdeviceHost=emulation
 ```
 gradle clean mobile -DdeviceHost=browserstack
 ```
-Для запуска мобильных тестов нужно определить значение envMobile:
-- [ ] <code>-DenvMobile=browserstack</code> : тесты будут запущены в облачной платформе <a target="_blank" href="https://www.browserstack.com/"> Browserstack </a> 
-- [ ] <code>-DenvMobile=emulator</code> : тесты будут запущены в эмуляторе, созданном средствами Appium Server & Appium Inspector. <br/> <a target="_blank" href="https://autotest.how/appium-setup-for-local-android-tutorial"> Инструкция по настройке </a> 
-- [ ] <code>-DenvMobile=localDevice</code> : тесты будут запущены на устройстве, подключенному по usb. <br/> Так же требуется настройка Appium Server & Appium Inspector
 
 <details>
    <summary>Дополнительные команды:</summary>
