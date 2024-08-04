@@ -102,8 +102,8 @@ flowchart LR
     E --> H[-Dhost=habitica]
     E --> I[-Dhost=selenoid]
     G --> J[-DdeviceHost=browserstack]
-    G --> K[-DdeviceHost=emulator]
-    G --> L[-DdeviceHost=localDevice]
+    G --> K[-DdeviceHost=emulation]
+    G --> L[-DdeviceHost=real]
 ```
 
 ### Локальный запуск тестов
