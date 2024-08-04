@@ -168,7 +168,7 @@ gradle clean test -Dhost=selenoid
 -DbaseUrl - адрес Habitica
 ```
 
-## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/C22-VadimSolonin-habitica-project/">Jenkins</a></b>
+## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/">Jenkins</a></b>
 
 >Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`
 
