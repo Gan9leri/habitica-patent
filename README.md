@@ -195,7 +195,7 @@ gradle clean test -Dhost=selenoid
 >
 <img src="images/screenshots/">
 
-## Интеграция с <b><a target="_blank" href=" ">Jira</a></b>
+## Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1305">Jira</a></b>
 
 >В Jira создана задача
 >
