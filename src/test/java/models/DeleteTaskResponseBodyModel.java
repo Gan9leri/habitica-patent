@@ -1,6 +1,8 @@
 package models;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+
 import java.util.List;
 
 @Data
@@ -12,11 +14,12 @@ public class DeleteTaskResponseBodyModel {
     String appVersion;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class TaskData{
+    public static class TaskData {
 
     }
+
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class UserNotifications{
+    public static class UserNotifications {
 
     }
 }

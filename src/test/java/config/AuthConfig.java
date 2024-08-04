@@ -1,4 +1,5 @@
 package config;
+
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
@@ -7,7 +8,10 @@ import org.aeonbits.owner.Config;
 
 public interface AuthConfig extends Config {
     String login();
+
     String password();
+
     String browserstackUser();
+
     String browserstackKey();
 }

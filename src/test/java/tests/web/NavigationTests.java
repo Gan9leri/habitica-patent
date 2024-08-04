@@ -1,4 +1,5 @@
 package tests.web;
+
 import enumeration.MainPageSectionsName;
 import enumeration.FaqPageSectionsNames;
 import extensions.WithLogin;
@@ -15,7 +16,7 @@ import pages.OverviewPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
-public class NavigationTests extends TestBase{
+public class NavigationTests extends TestBase {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();
@@ -25,7 +26,7 @@ public class NavigationTests extends TestBase{
     @DisplayName("Проверка возможности перехода к Правилам сообщества")
     @Test
     @WithLogin
-    void openCommunityGuidelinesTest(){
+    void openCommunityGuidelinesTest() {
 
         mainPage.openMainPage()
                 .clickCummunityRules()
@@ -36,9 +37,9 @@ public class NavigationTests extends TestBase{
     @DisplayName("Проверка логотипа")
     @Test
     @WithLogin
-    void navigationToMainPageTest(){
+    void navigationToMainPageTest() {
         overviewPage.openOverviewPage()
-                    .clickLogoButton();
+                .clickLogoButton();
         mainPage.checkUrl("https://habitica.com/");
     }
 
@@ -56,9 +57,9 @@ public class NavigationTests extends TestBase{
     @DisplayName("Навигация по разделам Faq")
     @Test
     @WithLogin
-    void faqPageNavigationTest(){
+    void faqPageNavigationTest() {
         faqPage.openFaqPage();
-        for (FaqPageSectionsNames item: faqPageChapters) {
+        for (FaqPageSectionsNames item : faqPageChapters) {
             faqPage.clickNavBarChapter(item.getValue())
                     .checkUrl(item.getLink());
 

@@ -1,6 +1,8 @@
 package models;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,18 +28,18 @@ public class PostCreateTaskUserRequestModel {
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Challenge{
+    public static class Challenge {
         private String shortName;
     }
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Group{
+    public static class Group {
         private Approval approval;
 
         @Data
         @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class Approval{
+        public static class Approval {
             private Boolean required;
             private Boolean approved;
             private Boolean requested;

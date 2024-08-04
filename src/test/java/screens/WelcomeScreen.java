@@ -10,10 +10,10 @@ import static io.appium.java_client.AppiumBy.id;
 public class WelcomeScreen {
 
     SelenideElement loginButton = $(id("com.habitrpg.android.habitica:id/show_login_button")),
-                    newGameButton = $(id("com.habitrpg.android.habitica:id/new_game_button"));
+            newGameButton = $(id("com.habitrpg.android.habitica:id/new_game_button"));
 
     @Step("Проверка кнопки LOGIN")
-    public WelcomeScreen checkVisibleLoginButton(){
+    public WelcomeScreen checkVisibleLoginButton() {
         loginButton.shouldBe(visible);
         return this;
     }
@@ -25,13 +25,13 @@ public class WelcomeScreen {
     }
 
     @Step("Нажатие на кнопку LOGIN")
-    public WelcomeScreen clickLoginButton(){
+    public WelcomeScreen clickLoginButton() {
         loginButton.click();
         return this;
     }
 
     @Step("Нажатие на кнопку REGISTER")
-    public WelcomeScreen clickNewGameButton(){
+    public WelcomeScreen clickNewGameButton() {
         newGameButton.click();
         return this;
     }

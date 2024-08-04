@@ -1,4 +1,5 @@
 package tests.web;
+
 import data.DataGeneration;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -12,14 +13,14 @@ import pages.MainPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
-public class TasksTests extends TestBase{
+public class TasksTests extends TestBase {
     DataGeneration data = new DataGeneration();
     MainPage mainPage = new MainPage();
 
     @DisplayName("Проверка возможности создания задачи")
     @Test
     @WithLogin
-    void addTaskTest(){
+    void addTaskTest() {
         String task = data.task;
         mainPage.openMainPage()
                 .clickAddTaskButton()

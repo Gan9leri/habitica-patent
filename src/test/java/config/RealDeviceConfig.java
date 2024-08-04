@@ -1,4 +1,5 @@
 package config;
+
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
@@ -7,5 +8,6 @@ import org.aeonbits.owner.Config;
 
 public interface RealDeviceConfig extends Config {
     String mobileUrl();
+
     String deviceName();
 }

@@ -1,4 +1,5 @@
 package tests.api;
+
 import config.AuthConfig;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -9,6 +10,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,13 +31,13 @@ public class LoginTests extends TestBase {
         request.setPassword(authConfig.password());
         AuthResponseBodyModel response =
                 step("Отправка POST запроса на авторизацию ", () ->
-                    given(requestSpec)
-                        .body(request)
-                        .when()
-                        .post("/v4/user/auth/local/login")
-                        .then()
-                        .spec(responseSpec200)
-                        .extract().as(AuthResponseBodyModel.class)
+                        given(requestSpec)
+                                .body(request)
+                                .when()
+                                .post("/v4/user/auth/local/login")
+                                .then()
+                                .spec(responseSpec200)
+                                .extract().as(AuthResponseBodyModel.class)
                 );
         step("Проверка успешности авторизации", () ->
                 assertThat(response.getSuccess()).isEqualTo(true)
@@ -44,22 +46,22 @@ public class LoginTests extends TestBase {
 
     @DisplayName("Негативный тест на авторизацию")
     @Test
-    void negativeLoginTest(){
+    void negativeLoginTest() {
         AuthRequestBodyModel request = new AuthRequestBodyModel();
         request.setUsername("error");
         request.setPassword("error");
         NotAuthRequestBodyModel response =
                 step("Отправка POST запроса на авторизацию ", () ->
                         given(requestSpec)
-                        .body(request)
-                        .when()
-                        .post("/v4/user/auth/local/login")
-                        .then()
-                        .spec(responseSpec401)
-                        .extract().as(NotAuthRequestBodyModel.class)
+                                .body(request)
+                                .when()
+                                .post("/v4/user/auth/local/login")
+                                .then()
+                                .spec(responseSpec401)
+                                .extract().as(NotAuthRequestBodyModel.class)
                 );
         step("Проверка неуспешности авторизации", () ->
-            assertThat(response.getSuccess()).isEqualTo(false)
+                assertThat(response.getSuccess()).isEqualTo(false)
         );
     }
 }

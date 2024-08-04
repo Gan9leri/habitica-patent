@@ -1,4 +1,5 @@
 package tests.web;
+
 import config.AuthConfig;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
@@ -20,8 +21,8 @@ public class ChallengesTests extends TestBase {
     @DisplayName("Проверка владельца испытания")
     @Test
     @WithLogin
-    void ownerOfChallengeTest(){
+    void ownerOfChallengeTest() {
         challengesPage.openChallengePage()
-                      .checkOwnerOfChallenge(authConfig.login());
+                .checkOwnerOfChallenge(authConfig.login());
     }
 }

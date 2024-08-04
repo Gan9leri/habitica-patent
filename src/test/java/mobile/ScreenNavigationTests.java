@@ -14,7 +14,7 @@ import screens.WelcomeScreen;
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
 @DisplayName("Тесты на навигацию по начальным экранам")
-public class ScreenNavigationTests extends TestBase{
+public class ScreenNavigationTests extends TestBase {
     IntroScreen introScreen = new IntroScreen();
     WelcomeScreen welcomeScreen = new WelcomeScreen();
     LoginScreen loginScreen = new LoginScreen();
@@ -26,32 +26,32 @@ public class ScreenNavigationTests extends TestBase{
 
         introScreen.skipIntro();
         welcomeScreen.checkVisibleLoginButton()
-                     .checkVisibleRegisterButton();
+                .checkVisibleRegisterButton();
     }
 
     @Test
     @DisplayName("Проверка экрана авторизации")
-    void checkLoginScreenTest(){
+    void checkLoginScreenTest() {
 
         introScreen.skipIntro();
         welcomeScreen.clickLoginButton();
         loginScreen.checkVisibleUsernameField()
-                   .checkVisibleUsernameField()
-                   .clickBackButton();
+                .checkVisibleUsernameField()
+                .clickBackButton();
         welcomeScreen.checkVisibleLoginButton()
-                     .checkVisibleRegisterButton();
+                .checkVisibleRegisterButton();
     }
 
     @Test
     @DisplayName("Проверка экрана регистрации")
-    void checkRegisterScreenTest(){
+    void checkRegisterScreenTest() {
         introScreen.skipIntro();
         welcomeScreen.clickNewGameButton();
         registerScreen.checkVisibleEmailField()
-                      .checkVisibleEmailField()
-                      .checkVisiblePasswordField()
-                      .checkVisibleConfirmPasswordField()
-                      .clickBackButton();
+                .checkVisibleEmailField()
+                .checkVisiblePasswordField()
+                .checkVisibleConfirmPasswordField()
+                .clickBackButton();
         welcomeScreen.checkVisibleLoginButton()
                 .checkVisibleRegisterButton();
     }

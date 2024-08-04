@@ -1,10 +1,13 @@
 package extensions;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import data.DataGeneration;
 import models.PostCreateTaskUserRequestModel;
 import models.PostCreateTaskUserResponseModel;
+
 import java.io.File;
 import java.io.IOException;
+
 import static authorization.Authorization.getAuthResponse;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
@@ -23,15 +26,15 @@ public class TaskExtension {
         request[0].set_id(data.taskId);
         PostCreateTaskUserResponseModel response =
                 step("Отправка POST запроса на добавление задачи", () ->
-                    given(requestSpec)
-                        .when()
-                        .body(request)
-                        .header("X-Api-Key", getAuthResponse().getData().getApiToken())
-                        .header("X-Api-User", getAuthResponse().getData().getId())
-                        .post("/v4/tasks/user")
-                        .then()
-                        .spec(responseSpec201)
-                        .extract().as(PostCreateTaskUserResponseModel.class)
+                        given(requestSpec)
+                                .when()
+                                .body(request)
+                                .header("X-Api-Key", getAuthResponse().getData().getApiToken())
+                                .header("X-Api-User", getAuthResponse().getData().getId())
+                                .post("/v4/tasks/user")
+                                .then()
+                                .spec(responseSpec201)
+                                .extract().as(PostCreateTaskUserResponseModel.class)
                 );
         return response.getData().get_id();
     }

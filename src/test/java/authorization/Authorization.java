@@ -1,4 +1,5 @@
 package authorization;
+
 import com.codeborne.selenide.Selenide;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import models.AuthRequestBodyModel;
 import models.AuthResponseBodyModel;
 import models.HabitMobileSettings;
 import org.aeonbits.owner.ConfigFactory;
+
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 

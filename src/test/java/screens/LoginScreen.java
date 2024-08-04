@@ -10,23 +10,23 @@ import static io.appium.java_client.AppiumBy.id;
 public class LoginScreen {
 
     SelenideElement usernameField = $(id("com.habitrpg.android.habitica:id/username")),
-                    passwordField = $(id("com.habitrpg.android.habitica:id/password")),
-                    backButton = $(id("com.habitrpg.android.habitica:id/back_button"));
+            passwordField = $(id("com.habitrpg.android.habitica:id/password")),
+            backButton = $(id("com.habitrpg.android.habitica:id/back_button"));
 
     @Step("Проверка поля Username")
-    public LoginScreen checkVisibleUsernameField(){
+    public LoginScreen checkVisibleUsernameField() {
         usernameField.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка поля Password")
-    public LoginScreen checkVisiblePasswordField(){
+    public LoginScreen checkVisiblePasswordField() {
         passwordField.shouldBe(visible);
         return this;
     }
 
     @Step("Нажатие на кнопку <-")
-    public LoginScreen clickBackButton(){
+    public LoginScreen clickBackButton() {
         backButton.click();
         return this;
     }

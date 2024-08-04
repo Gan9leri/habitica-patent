@@ -8,6 +8,8 @@ import org.aeonbits.owner.Config;
 
 public interface EmulationConfig extends Config {
     String mobilePlatform();
+
     String deviceName();
+
     String mobileUrl();
 }
