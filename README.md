@@ -89,7 +89,6 @@ Habitica — трекер задач, который совместил фило
 
 ## Запуск тестов
 
-
 ### Допустимые комбинации
 
 ```mermaid 
@@ -99,7 +98,7 @@ flowchart LR
     C --> D[test]
     C --> E[web]
     C --> F[api]
-    C --> G[android]
+    C --> G[mobile]
     E --> H[-DenvWeb=local]
     E --> I[-DenvWeb=remote]
     G --> J[-DenvMobile=browserstack]
