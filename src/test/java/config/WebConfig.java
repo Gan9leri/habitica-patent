@@ -1,11 +1,12 @@
 package config;
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath:${env}.properties",
-})
 
 public interface WebConfig extends Config {
+    @Key("baseUrl")
+    @DefaultValue("https://habitica.com")
+    String baseUrl();
+
     @Key("browser")
     @DefaultValue("chrome")
     String browser();
@@ -15,22 +16,10 @@ public interface WebConfig extends Config {
     String browserSize();
 
     @Key("browserVersion")
-    @DefaultValue("128")
+    @DefaultValue("100")
     String browserVersion();
 
     @Key("host")
-    //@DefaultValue("https://habitica.com")
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String remoteUrl();
-
-    //@Key("baseUrl")
-    @DefaultValue("https://habitica.com")
-    String baseUrl();
-
-    //@Key("baseUri")
-    @DefaultValue("https://habitica.com")
-    String baseURI();
-
-    //@Key("basePath")
-    @DefaultValue("/api")
-    String basePath();
 }

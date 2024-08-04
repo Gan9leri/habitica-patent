@@ -1,16 +1,12 @@
 package config;
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath:${env}.properties"
-})
-
 public interface ApiConfig extends Config {
-   // @Key("baseUri")
+    @Key("baseURI")
     @DefaultValue("https://habitica.com")
     String baseURI();
 
-  //  @Key("basePath")
+    @Key("/api")
     @DefaultValue("/api")
     String basePath();
 }
