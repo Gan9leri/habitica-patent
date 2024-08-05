@@ -186,7 +186,7 @@ gradle clean test -Dhost=selenoid
 
 #### Развернутый результат прохождения тестов:
 
-<img src="images/screenshots/">
+<img src="images/screenshots/Result.PNG">
 
 
 ## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/4349">Allure TestOps</a></b>
