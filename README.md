@@ -175,14 +175,14 @@ gradle clean test -Dhost=selenoid
  
 <img src="images/screenshots/buildWithParametres.PNG">
 
-## Интеграция с <b><a target="_blank" href=" ">Allure report</a></b>
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/50/allure/">Allure report</a></b>
 #### Диаграммы прохождения тестов
 `ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и количеством успешных и провалившихся тестов <br/>
 `TREND` - отображает тенденцию выполнения тестов<br/>
 `SUITES` - отображает распределение тестов по сьютам <br/>
 `CATEGORIES` - отображает распределение неудачных тестов по типам дефектов
 
-<img src="images/screenshots/">
+<img src="images/screenshots/AllureReport.PNG">
 
 #### Развернутый результат прохождения тестов:
 
@@ -193,22 +193,27 @@ gradle clean test -Dhost=selenoid
 
 >Диаграммы прохождения тестов
 >
-<img src="images/screenshots/">
+<img src="images/screenshots/TestOpsDashbord.PNG">
+
+>Тест кейсы:
+> 
+<img src="images/screenshots/TestOpsTests.PNG"> 
 
 ## Интеграция с <b><a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1305">Jira</a></b>
 
 >В Jira создана задача
 >
-<img src="images/screenshots/">
+<img src="images/screenshots/task.PNG">
 
 >В разделе `Allure:Test Cases` отображаются тесты
-<img src="images/screenshots/">
+> 
+<img src="images/screenshots/JiraTests.PNG">
 
 ## Уведомления в Telegram с использованием бота
 
 > Бот, созданный в Telegram, после завершения сборки отправляет сообщение с отчетом о прохождении тестов
 > 
-<img src="images/screenshots/">
+<img src="images/screenshots/bot.PNG">
 
 ## Пример выполнения теста в Selenoid
 
