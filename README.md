@@ -224,5 +224,5 @@ gradle clean test -Dhost=selenoid
 
 > К каждому мобильному тесту, выполняемому в Browserstack, к отчету прилагается видео
 <p align="center">
-  <img src="images/video/">
+  <img src="images/video/mobile.gif">
 </p>
