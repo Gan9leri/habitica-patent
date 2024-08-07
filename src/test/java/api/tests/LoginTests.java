@@ -20,11 +20,11 @@ import static api.specs.Specs.*;
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
-@DisplayName("Тесты на авторизацию через Api")
+@DisplayName("API: Тесты на авторизацию через Api")
 public class LoginTests extends TestBase {
 
     @Test
-    @DisplayName("Позитивный тест на авторизацию")
+    @DisplayName("API: Позитивный тест на авторизацию")
     void loginTest() {
         AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         AuthRequestBodyModel request = new AuthRequestBodyModel();
@@ -46,7 +46,7 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Негативный тест на авторизацию")
+    @DisplayName("API: Негативный тест на авторизацию")
     void negativeLoginTest() {
         AuthRequestBodyModel request = new AuthRequestBodyModel();
         request.setUsername("error");
