@@ -12,9 +12,7 @@ import static io.restassured.http.ContentType.JSON;
 public class Specs {
     public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
-            .log().uri()
-            .log().method()
-            .log().body()
+            .log().all()
             .contentType(JSON);
 
     public static ResponseSpecification responseSpec200 = new ResponseSpecBuilder()
