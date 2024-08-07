@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PartyPage {
-    SelenideElement textArea = $("textarea"),
+    private final SelenideElement textArea = $("textarea"),
             sendButton = $(".send-chat"),
             containerField = $(".container-fluid");
 
