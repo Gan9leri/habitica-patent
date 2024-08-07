@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class OverviewPage {
-    SelenideElement logoButton = $(".habitica-logo");
+    private final SelenideElement logoButton = $(".habitica-logo");
 
     @Step("Открытие страницы Информация для новичков")
     public OverviewPage openOverviewPage() {
