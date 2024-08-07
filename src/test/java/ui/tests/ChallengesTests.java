@@ -13,14 +13,14 @@ import ui.pages.ChallengesPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Challenges")
-@DisplayName("Тесты для страницы испытаний")
+@DisplayName("UI: Тесты для страницы испытаний")
 public class ChallengesTests extends TestBase {
     ChallengesPage challengesPage = new ChallengesPage();
     AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
     @Test
     @WithLogin
-    @DisplayName("Проверка владельца испытания")
+    @DisplayName("UI: Проверка владельца испытания")
     void ownerOfChallengeTest() {
         challengesPage.openChallengePage()
                 .checkOwnerOfChallenge(authConfig.login());
