@@ -15,9 +15,4 @@ public class TestBaseApi {
         RestAssured.baseURI = apiConfig.baseURI();
         RestAssured.basePath = apiConfig.basePath();
     }
-
-    @AfterEach
-    void addAttachments() {
-        closeWebDriver();
-    }
 }
