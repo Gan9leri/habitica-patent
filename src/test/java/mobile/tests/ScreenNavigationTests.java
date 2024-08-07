@@ -13,7 +13,7 @@ import mobile.screens.WelcomeScreen;
 @Tag("mobile")
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
-@DisplayName("Тесты на навигацию по начальным экранам")
+@DisplayName("Mobile: Тесты на навигацию по начальным экранам")
 public class ScreenNavigationTests extends TestBase {
     IntroScreen introScreen = new IntroScreen();
     WelcomeScreen welcomeScreen = new WelcomeScreen();
@@ -21,7 +21,7 @@ public class ScreenNavigationTests extends TestBase {
     RegisterScreen registerScreen = new RegisterScreen();
 
     @Test
-    @DisplayName("Проверка возможности пропустить Intro")
+    @DisplayName("Mobile: Проверка возможности пропустить Intro")
     void checkIntroScreenTest() {
 
         introScreen.skipIntro();
@@ -30,7 +30,7 @@ public class ScreenNavigationTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка экрана авторизации")
+    @DisplayName("Mobile: Проверка экрана авторизации")
     void checkLoginScreenTest() {
 
         introScreen.skipIntro();
@@ -43,7 +43,7 @@ public class ScreenNavigationTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка экрана регистрации")
+    @DisplayName("Mobile: Проверка экрана регистрации")
     void checkRegisterScreenTest() {
         introScreen.skipIntro();
         welcomeScreen.clickNewGameButton();
