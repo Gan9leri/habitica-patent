@@ -12,14 +12,14 @@ import ui.pages.MainPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
-@DisplayName("Тесты для главной страницы")
+@DisplayName("UI: Тесты для главной страницы")
 public class TasksTests extends TestBase {
     DataGeneration data = new DataGeneration();
     MainPage mainPage = new MainPage();
 
     @Test
     @WithLogin
-    @DisplayName("Проверка возможности создания задачи")
+    @DisplayName("UI: Проверка возможности создания задачи")
     void addTaskTest() {
         String task = data.task;
         mainPage.openMainPage()
