@@ -8,7 +8,7 @@ import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 public class FaqPage {
 
-    ElementsCollection navigationBar = $(".navbar-nav").$$("li");
+    private final ElementsCollection navigationBar = $(".navbar-nav").$$("li");
 
     @Step("Открытие страницы Faq")
     public FaqPage openFaqPage() {
