@@ -1,6 +1,6 @@
 package extensions;
 
-import authorization.Authorization;
+import extensions.authorization.Authorization;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
