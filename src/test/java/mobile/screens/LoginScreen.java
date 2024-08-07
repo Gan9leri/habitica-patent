@@ -14,13 +14,13 @@ public class LoginScreen {
             backButton = $(id("com.habitrpg.android.habitica:id/back_button"));
 
     @Step("Проверка поля Username")
-    public LoginScreen checkVisibleUsernameField() {
+    public LoginScreen checkUsernameFieldVisibility() {
         usernameField.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка поля Password")
-    public LoginScreen checkVisiblePasswordField() {
+    public LoginScreen checkPasswordFieldVisibility() {
         passwordField.shouldBe(visible);
         return this;
     }
