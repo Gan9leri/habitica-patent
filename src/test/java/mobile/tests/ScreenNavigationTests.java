@@ -25,8 +25,8 @@ public class ScreenNavigationTests extends TestBaseMobile {
     void checkIntroScreenTest() {
 
         introScreen.skipIntro();
-        welcomeScreen.checkVisibleLoginButton()
-                .checkVisibleRegisterButton();
+        welcomeScreen.checkLoginButtonVisibility()
+                .checkRegisterButtonVisibility();
     }
 
     @Test
@@ -35,11 +35,11 @@ public class ScreenNavigationTests extends TestBaseMobile {
 
         introScreen.skipIntro();
         welcomeScreen.clickLoginButton();
-        loginScreen.checkVisibleUsernameField()
-                .checkVisibleUsernameField()
+        loginScreen.checkUsernameFieldVisibility()
+                .checkPasswordFieldVisibility()
                 .clickBackButton();
-        welcomeScreen.checkVisibleLoginButton()
-                .checkVisibleRegisterButton();
+        welcomeScreen.checkLoginButtonVisibility()
+                .checkRegisterButtonVisibility();
     }
 
     @Test
@@ -47,12 +47,12 @@ public class ScreenNavigationTests extends TestBaseMobile {
     void checkRegisterScreenTest() {
         introScreen.skipIntro();
         welcomeScreen.clickNewGameButton();
-        registerScreen.checkVisibleEmailField()
-                .checkVisibleEmailField()
-                .checkVisiblePasswordField()
-                .checkVisibleConfirmPasswordField()
+        registerScreen.checkUsernameFieldVisibility()
+                .checkEmailFieldVisibility()
+                .checkPasswordFieldVisibility()
+                .checkConfirmPasswordFieldVisibility()
                 .clickBackButton();
-        welcomeScreen.checkVisibleLoginButton()
-                .checkVisibleRegisterButton();
+        welcomeScreen.checkLoginButtonVisibility()
+                .checkRegisterButtonVisibility();
     }
 }
