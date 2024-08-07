@@ -15,7 +15,7 @@ import ui.pages.OverviewPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("MainPage")
-@DisplayName("Тесты навигации по разделам сайта")
+@DisplayName("UI: Тесты навигации по разделам сайта")
 public class NavigationTests extends TestBase {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
@@ -25,7 +25,7 @@ public class NavigationTests extends TestBase {
 
     @Test
     @WithLogin
-    @DisplayName("Проверка возможности перехода к Правилам сообщества")
+    @DisplayName("UI: Проверка возможности перехода к Правилам сообщества")
     void openCommunityGuidelinesTest() {
 
         mainPage.openMainPage()
@@ -36,7 +36,7 @@ public class NavigationTests extends TestBase {
 
     @Test
     @WithLogin
-    @DisplayName("Проверка логотипа")
+    @DisplayName("UI: Проверка логотипа")
     void navigationToMainPageTest() {
         overviewPage.openOverviewPage()
                 .clickLogoButton();
@@ -45,7 +45,7 @@ public class NavigationTests extends TestBase {
 
     @Test
     @WithLogin
-    @DisplayName("Навигация по разделам главной страницы")
+    @DisplayName("UI: Навигация по разделам главной страницы")
     void mainPageNavigationTest() {
         mainPage.openMainPage();
         for (MainPageSectionsName item : mainPageChapters) {
@@ -56,7 +56,7 @@ public class NavigationTests extends TestBase {
 
     @Test
     @WithLogin
-    @DisplayName("Навигация по разделам Faq")
+    @DisplayName("UI: Навигация по разделам Faq")
     void faqPageNavigationTest() {
         faqPage.openFaqPage();
         for (FaqPageSectionsNames item : faqPageChapters) {
