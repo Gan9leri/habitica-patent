@@ -29,7 +29,7 @@ public class NavigationTests extends TestBase {
     void openCommunityGuidelinesTest() {
 
         mainPage.openMainPage()
-                .clickCummunityRules()
+                .clickCommunityRules()
                 .moveToNewTab()
                 .checkUrl("https://habitica.com/static/community-guidelines");
     }
