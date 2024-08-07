@@ -14,7 +14,7 @@ import ui.pages.ChallengesPage;
 @Owner("Овсянников Александр")
 @Feature("Challenges")
 @DisplayName("UI: Тесты для страницы испытаний")
-public class ChallengesTests extends TestBase {
+public class ChallengesTests extends TestBaseUi {
     ChallengesPage challengesPage = new ChallengesPage();
     AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
 

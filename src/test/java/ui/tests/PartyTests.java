@@ -13,7 +13,7 @@ import ui.pages.PartyPage;
 @Owner("Овсянников Александр")
 @Feature("Party")
 @DisplayName("UI: Тесты для страницы команды")
-public class PartyTests extends TestBase {
+public class PartyTests extends TestBaseUi {
     DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
 

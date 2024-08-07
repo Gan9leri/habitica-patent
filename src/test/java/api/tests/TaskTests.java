@@ -23,7 +23,7 @@ import static api.specs.Specs.*;
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
 @DisplayName("API: Тесты на работу с задачами")
-public class TaskTests extends TestBase {
+public class TaskTests extends TestBaseApi {
 
     @Test
     @DisplayName("API: Тест на удаление задачи")

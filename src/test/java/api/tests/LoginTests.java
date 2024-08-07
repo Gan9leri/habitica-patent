@@ -21,7 +21,7 @@ import static api.specs.Specs.*;
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
 @DisplayName("API: Тесты на авторизацию через Api")
-public class LoginTests extends TestBase {
+public class LoginTests extends TestBaseApi {
 
     @Test
     @DisplayName("API: Позитивный тест на авторизацию")

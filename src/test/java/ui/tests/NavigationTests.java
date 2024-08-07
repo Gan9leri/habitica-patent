@@ -16,7 +16,7 @@ import ui.pages.OverviewPage;
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 @DisplayName("UI: Тесты навигации по разделам сайта")
-public class NavigationTests extends TestBase {
+public class NavigationTests extends TestBaseUi {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();

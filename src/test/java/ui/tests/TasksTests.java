@@ -13,7 +13,7 @@ import ui.pages.MainPage;
 @Owner("Овсянников Александр")
 @Feature("MainPage")
 @DisplayName("UI: Тесты для главной страницы")
-public class TasksTests extends TestBase {
+public class TasksTests extends TestBaseUi {
     DataGeneration data = new DataGeneration();
     MainPage mainPage = new MainPage();
 

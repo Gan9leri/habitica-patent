@@ -14,7 +14,7 @@ import mobile.screens.WelcomeScreen;
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
 @DisplayName("Mobile: Тесты на навигацию по начальным экранам")
-public class ScreenNavigationTests extends TestBase {
+public class ScreenNavigationTests extends TestBaseMobile {
     IntroScreen introScreen = new IntroScreen();
     WelcomeScreen welcomeScreen = new WelcomeScreen();
     LoginScreen loginScreen = new LoginScreen();

@@ -18,7 +18,7 @@ import static api.specs.Specs.*;
 @Owner("Овсянников Александр")
 @Feature("Tags")
 @DisplayName("API: Тесты на список тэгов")
-public class TagsTests extends TestBase {
+public class TagsTests extends TestBaseApi {
 
     @Test
     @DisplayName("API: Тест на получение списка тэгов")

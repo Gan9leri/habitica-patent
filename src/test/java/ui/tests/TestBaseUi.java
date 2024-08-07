@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class TestBase {
+public class TestBaseUi {
     @BeforeAll
     public static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
