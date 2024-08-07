@@ -71,5 +71,8 @@ public class TaskTests extends TestBaseApi {
         step("Проверка успешности добавления задачи", () ->
                 assertThat(response.getSuccess()).isEqualTo(true)
         );
+        step("Проверка типа сущности:", () ->
+                assertThat(response.getData().getType()).isEqualTo("todo")
+        );
     }
 }
