@@ -22,11 +22,11 @@ import static api.specs.Specs.*;
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("LoginApi")
-@DisplayName("Тесты на работу с задачами")
+@DisplayName("API: Тесты на работу с задачами")
 public class TaskTests extends TestBase {
 
     @Test
-    @DisplayName("Тест на удаление задачи")
+    @DisplayName("API: Тест на удаление задачи")
     void deleteTaskTest() throws IOException {
         String taskId = createTask();
         DeleteTaskResponseBodyModel response =
@@ -46,7 +46,7 @@ public class TaskTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Тест на добавление задачи через Api")
+    @DisplayName("API: Тест на добавление задачи через Api")
     void addTaskApiTest() throws IOException {
         DataGeneration data = new DataGeneration();
         ObjectMapper om = new ObjectMapper();
