@@ -13,13 +13,13 @@ public class WelcomeScreen {
             newGameButton = $(id("com.habitrpg.android.habitica:id/new_game_button"));
 
     @Step("Проверка кнопки LOGIN")
-    public WelcomeScreen checkVisibleLoginButton() {
+    public WelcomeScreen checkLoginButtonVisibility() {
         loginButton.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка кнопки REGISTER")
-    public WelcomeScreen checkVisibleRegisterButton() {
+    public WelcomeScreen checkRegisterButtonVisibility() {
         newGameButton.shouldBe(visible);
         return this;
     }
