@@ -12,14 +12,14 @@ import ui.pages.PartyPage;
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Party")
-@DisplayName("Тесты для страницы команды")
+@DisplayName("UI: Тесты для страницы команды")
 public class PartyTests extends TestBase {
     DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
 
     @Test
     @WithLogin
-    @DisplayName("Проверка отправки сообщения в чат команды")
+    @DisplayName("UI: Проверка отправки сообщения в чат команды")
     void sendingAMessageToTeamChatTest() {
         String message = data.message;
         partyPage.openPartyPage()
