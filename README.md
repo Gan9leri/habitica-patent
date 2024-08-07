@@ -191,7 +191,7 @@ gradle clean test -Dhost=selenoid
  
 <img src="images/screenshots/buildWithParametres.PNG">
 
-## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/50/allure/">Allure report</a></b>
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/allure/">Allure report</a></b>
 #### Диаграммы прохождения тестов
 `ALLURE REPORT` - отображает дату и время теста, общее количество запущенных тестов, а также диаграмму с процентом и количеством успешных и провалившихся тестов <br/>
 `TREND` - отображает тенденцию выполнения тестов<br/>
