@@ -1,17 +1,12 @@
 package extensions.authorization.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "auth")
+@AllArgsConstructor
 public class HabitMobileSettings {
     String apiId, apiToken;
-
-    public HabitMobileSettings(String apiId, String apiToken) {
-        this.apiId = apiId;
-        this.apiToken = apiToken;
-    }
 }
