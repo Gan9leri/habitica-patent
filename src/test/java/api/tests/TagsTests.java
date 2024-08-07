@@ -17,11 +17,11 @@ import static api.specs.Specs.*;
 @Tag("api")
 @Owner("Овсянников Александр")
 @Feature("Tags")
-@DisplayName("Тесты на список тэгов")
+@DisplayName("API: Тесты на список тэгов")
 public class TagsTests extends TestBase {
 
     @Test
-    @DisplayName("Тест на получение списка тэгов")
+    @DisplayName("API: Тест на получение списка тэгов")
     void getTagsTest() {
         String xApiUser = getAuthResponse().getData().getId();
         String xApiKey = getAuthResponse().getData().getApiToken();
