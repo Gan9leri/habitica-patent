@@ -43,6 +43,9 @@ public class LoginTests extends TestBaseApi {
         step("Проверка успешности авторизации", () ->
                 assertThat(response.getSuccess()).isEqualTo(true)
         );
+        step("Проверка идентификатора поль", () ->
+                assertThat(response.getData().getId()).isEqualTo("c43534de-3efb-4ff5-bf40-3fc7f5cae9d3")
+        );
     }
 
     @Test
@@ -63,6 +66,9 @@ public class LoginTests extends TestBaseApi {
                 );
         step("Проверка неуспешности авторизации", () ->
                 assertThat(response.getSuccess()).isEqualTo(false)
+        );
+        step("Проверка статуса ошибки", () ->
+                assertThat(response.getError()).isEqualTo("NotAuthorized")
         );
     }
 }
