@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 public class MainPage {
-    SelenideElement addTaskButton = $("#create-task-btn"),
+    private final SelenideElement addTaskButton = $("#create-task-btn"),
             itemTask = $("div.px-2:nth-child(3) > div:nth-child(2)"),
             inputArea = $(".task-purple-modal-input"),
             createButton = $("button.justify-content-center:nth-child(2)"),
             communityRulesButton = $("[href='/static/community-guidelines']"),
             communityRulesTitle = $("#welcome");
-    ElementsCollection menuCollapse = $("#menu_collapse").$$("li");
+    private final ElementsCollection menuCollapse = $("#menu_collapse").$$("li");
 
     @Step("Открытие главной страницы")
     public MainPage openMainPage() {
