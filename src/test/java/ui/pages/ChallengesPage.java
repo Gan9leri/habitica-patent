@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ChallengesPage {
 
-    SelenideElement ownerOfChallenge = $(".owner");
+    private final SelenideElement ownerOfChallenge = $(".owner");
 
     @Step("Открытие страницы испытаний")
     public ChallengesPage openChallengePage() {
