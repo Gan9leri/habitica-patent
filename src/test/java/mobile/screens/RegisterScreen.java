@@ -16,25 +16,25 @@ public class RegisterScreen {
             backButton = $(id("com.habitrpg.android.habitica:id/back_button"));
 
     @Step("Проверка поля Username")
-    public RegisterScreen checkVisibleUsernameField() {
+    public RegisterScreen checkUsernameFieldVisibility() {
         usernameField.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка поля Email address")
-    public RegisterScreen checkVisibleEmailField() {
+    public RegisterScreen checkEmailFieldVisibility() {
         emailField.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка поля Password")
-    public RegisterScreen checkVisiblePasswordField() {
+    public RegisterScreen checkPasswordFieldVisibility() {
         passwordField.shouldBe(visible);
         return this;
     }
 
     @Step("Проверка поля Conform password")
-    public RegisterScreen checkVisibleConfirmPasswordField() {
+    public RegisterScreen checkConfirmPasswordFieldVisibility() {
         confirmPasswordField.shouldBe(visible);
         return this;
     }
