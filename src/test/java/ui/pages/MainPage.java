@@ -55,7 +55,7 @@ public class MainPage {
     }
 
     @Step("Нажатие на кнопку Правила сообщества")
-    public MainPage clickCummunityRules() {
+    public MainPage clickCommunityRules() {
         communityRulesButton.scrollIntoView(true).click();
 
         return this;
