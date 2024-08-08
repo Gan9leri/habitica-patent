@@ -21,7 +21,7 @@ public class PartyTests extends TestBaseUi {
     @WithLogin
     @DisplayName("UI: Проверка отправки сообщения в чат команды")
     void sendingAMessageToTeamChatTest() {
-        String message = data.message;
+        String message = data.getMessage();
         partyPage.openPartyPage()
                 .enteringAMessageInChat(message)
                 .clickSendButton()
