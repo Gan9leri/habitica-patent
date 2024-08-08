@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 
 public interface WebConfig extends Config {
-    @Key("baseUrl")
+    //@Key("baseUrl")
     @DefaultValue("https://habitica.com")
     String baseUrl();
 
