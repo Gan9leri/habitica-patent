@@ -73,12 +73,6 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверка заголовка")
-    public MainPage checkCommunityRulesTitle(String value) {
-        communityRulesTitle.shouldHave(text(value));
-        return this;
-    }
-
     @Step("Нажатие на кнопку раздела")
     public MainPage clickMenuCollapseElement(int value) {
         menuCollapse.get(value).click();
