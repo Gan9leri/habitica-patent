@@ -20,7 +20,8 @@ public interface WebConfig extends Config {
     @DefaultValue("100")
     String browserVersion();
 
-    @Key("host")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
+    //@Key("host")
+    //@DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
+    @DefaultValue("habitica")
     String remoteUrl();
 }
