@@ -1,5 +1,6 @@
 package extensions.authorization;
 
+import com.codeborne.selenide.Configuration;
 import extensions.authorization.models.HabitMobileSettings;
 import com.codeborne.selenide.Selenide;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,6 +12,7 @@ import api.models.AuthRequestBodyModel;
 import api.models.AuthResponseBodyModel;
 import org.aeonbits.owner.ConfigFactory;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 
@@ -38,6 +40,6 @@ public class Authorization {
         mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         String authData = mapper.writeValueAsString(habitMobileSettings);
         open("/static/img/bits.d0926ee2.svg");
-        Selenide.localStorage().setItem("habit-tests.mobile-settings", authData);
+        Selenide.localStorage().setItem("habit-mobile-settings", authData);
     }
 }
