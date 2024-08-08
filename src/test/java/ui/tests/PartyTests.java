@@ -11,6 +11,9 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ui.pages.PartyPage;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Party")

@@ -1,9 +1,12 @@
 package ui.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.selector.ByTagAndText;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -35,7 +38,7 @@ public class PartyPage {
 
     @Step("Проверка чата")
     public PartyPage checkPartyChat(String value) {
-        containerField.shouldHave(text(value));
+        $(byTagAndText("p", value)).shouldBe(visible);
         return this;
     }
 
