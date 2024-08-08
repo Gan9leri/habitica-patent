@@ -115,7 +115,7 @@ flowchart LR
     C --> E[web]
     C --> F[api]
     C --> G[mobile]
-    E --> H[-Dhost=habitica]
+    E --> H[-Dhost=local]
     E --> I[-Dhost=selenoid]
     G --> J[-DdeviceHost=browserstack]
     G --> K[-DdeviceHost=emulation]
