@@ -11,10 +11,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ui.pages.PartyPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
 @Tag("web")
 @Owner("Овсянников Александр")
 @Feature("Party")
@@ -37,19 +33,16 @@ public class PartyTests extends TestBaseUi {
 
     @Test
     @WithLogin
-    void partyTest(){
-
+    @DisplayName("UI: Проверка работы кнопки Щит")
+    void shieldButtonTest(){
         partyPage.openPartyPage()
                  .buttonShieldClick()
                  .checkNameInProfile(authConfig.login());
-
-        /*open("/party");
-        $(".shield").click();
-        $(".character-name").shouldHave(text("Gan9leri"));*/
     }
 
     @Test
     @WithLogin
+    @DisplayName("UI: Проверка лидера команды")
     void checkLeaderPartyTest(){
         partyPage.openPartyPage()
                  .checkLeaderName(authConfig.login())

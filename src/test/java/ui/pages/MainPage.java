@@ -54,19 +54,6 @@ public class MainPage {
         return this;
     }
 
-    @Step("Нажатие на кнопку Правила сообщества")
-    public MainPage clickCommunityRules() {
-        communityRulesButton.scrollIntoView(true).click();
-
-        return this;
-    }
-
-    @Step("Переход к следующей вкладке")
-    public MainPage moveToNewTab() {
-        webdriver().driver().switchTo().window(1);
-        return this;
-    }
-
     @Step("Проверка Url")
     public MainPage checkUrl(String value) {
         webdriver().shouldHave(currentFrameUrl(value));

@@ -1,4 +1,4 @@
-package ui.enumeration;
+package ui.utils;
 
 import lombok.Getter;
 

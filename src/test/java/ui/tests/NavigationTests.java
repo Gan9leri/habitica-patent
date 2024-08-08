@@ -1,6 +1,6 @@
 package ui.tests;
 
-import ui.enumeration.MainPageSectionsName;
+import ui.utils.MainPageSectionsName;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ui.pages.MainPage;
 import ui.pages.OverviewPage;
+import ui.utils.UtilsMethods;
 
 @Tag("web")
 @Owner("Овсянников Александр")
@@ -18,14 +19,15 @@ public class NavigationTests extends TestBaseUi {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
+    UtilsMethods util = new UtilsMethods();
 
     @Test
     @WithLogin
     @DisplayName("UI: Проверка логотипа")
     void navigationToMainPageTest() {
         overviewPage.openOverviewPage()
-                .clickLogoButton();
-        mainPage.checkUrl("https://habitica.com/");
+                    .clickLogoButton();
+        util.checkUrl("https://habitica.com/");
     }
 
     @Test
@@ -34,8 +36,8 @@ public class NavigationTests extends TestBaseUi {
     void mainPageNavigationTest() {
         mainPage.openMainPage();
         for (MainPageSectionsName item : mainPageChapters) {
-            mainPage.clickMenuCollapseElement(item.getValue())
-                    .checkUrl(item.getLink());
+            mainPage.clickMenuCollapseElement(item.getValue());
+            util.checkUrl(item.getLink());
         }
     }
 }
