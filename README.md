@@ -127,7 +127,7 @@ flowchart LR
 
 Для запуска следует открыть IntelliJ IDEA и выполнить в терминале:
 ```
-gradle clean test -Dhost=habitica
+gradle clean test -Dhost=local
 ```
 
 #### WEB
