@@ -181,7 +181,6 @@ gradle clean test -Dhost=selenoid
 -DbrowserName - наименование браузера. По умолчанию chrome
 -DbrowserSize - размер окна браузера. По умолчанию 1920x1080
 -DbrowserVersion - номер версии браузера. По умолчанию 100.0
--DbaseUrl - адрес Habitica
 ```
 
 ## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/27-Ga9nrad-HabiticaPatent/">Jenkins</a></b>
