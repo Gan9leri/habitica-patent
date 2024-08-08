@@ -30,7 +30,7 @@ public class TestBaseUi {
         Configuration.browserSize = webConfig.browserSize();
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen= true;
-        /*if (System.getProperty("host", "selenoid").equals("selenoid")) {
+        if (System.getProperty("host", "selenoid").equals("selenoid")) {
             Configuration.browserVersion = webConfig.browserVersion();
             Configuration.remote = webConfig.remoteUrl();
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -39,7 +39,7 @@ public class TestBaseUi {
                     "enableVideo", true
             ));
             Configuration.browserCapabilities = capabilities;
-        }*/
+        }
     }
 
     @AfterEach
