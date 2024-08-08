@@ -1,22 +1,19 @@
 package ui.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByTagAndText;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byTagAndText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PartyPage {
     private final SelenideElement textArea = $("textarea"),
             sendButton = $(".send-chat"),
-            containerField = $(".container-fluid"),
             shield = $(".shield"),
             characterName = $(".character-name"),
             leader = $(".leader");
+    private final ElementsCollection messagesInChat = $$(".text.markdown");
 
     @Step("Открытие страницы с командой")
     public PartyPage openPartyPage() {
@@ -38,7 +35,7 @@ public class PartyPage {
 
     @Step("Проверка чата")
     public PartyPage checkPartyChat(String value) {
-        $(byTagAndText("p", value)).shouldBe(visible);
+        messagesInChat.first().shouldHave(text(value));
         return this;
     }
 
