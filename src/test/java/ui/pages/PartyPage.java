@@ -10,7 +10,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class PartyPage {
     private final SelenideElement textArea = $("textarea"),
             sendButton = $(".send-chat"),
-            containerField = $(".container-fluid");
+            containerField = $(".container-fluid"),
+            shield = $(".shield"),
+            characterName = $(".character-name"),
+            leader = $(".leader");
 
     @Step("Открытие страницы с командой")
     public PartyPage openPartyPage() {
@@ -33,6 +36,30 @@ public class PartyPage {
     @Step("Проверка чата")
     public PartyPage checkPartyChat(String value) {
         containerField.shouldHave(text(value));
+        return this;
+    }
+
+    @Step("Нажатие на Щит")
+    public PartyPage buttonShieldClick(){
+        shield.click();
+        return this;
+    }
+
+    @Step("Проверка имени в профиле")
+    public PartyPage checkNameInProfile(String value){
+        characterName.shouldHave(text(value));
+        return this;
+    }
+
+    @Step("Проверка имени лидера команды")
+    public PartyPage checkLeaderName(String value){
+        leader.shouldHave(text(value));
+        return this;
+    }
+
+    @Step("Открытие профиля лидера команды")
+    public PartyPage leaderProfileOpen(){
+        leader.click();
         return this;
     }
 }
