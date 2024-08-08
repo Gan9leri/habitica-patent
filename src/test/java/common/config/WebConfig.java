@@ -19,7 +19,4 @@ public interface WebConfig extends Config {
     @Key("browserVersion")
     @DefaultValue("100")
     String browserVersion();
-
-    @Key("host")
-    String remoteUrl();
 }
