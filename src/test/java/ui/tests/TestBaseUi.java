@@ -31,7 +31,6 @@ public class TestBaseUi {
         Configuration.browser = webConfig.browser();
         Configuration.browserSize = webConfig.browserSize();
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen= true;
         if (System.getProperty("host", "selenoid").equals("selenoid")) {
             Configuration.browserVersion = webConfig.browserVersion();
             Configuration.remote = authConfig.host();
