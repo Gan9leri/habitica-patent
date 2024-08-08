@@ -1,13 +1,19 @@
 package ui.tests;
 
+import common.config.AuthConfig;
 import common.data.DataGeneration;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ui.pages.PartyPage;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 @Tag("web")
 @Owner("Овсянников Александр")
@@ -16,6 +22,7 @@ import ui.pages.PartyPage;
 public class PartyTests extends TestBaseUi {
     DataGeneration data = new DataGeneration();
     PartyPage partyPage = new PartyPage();
+    AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
     @Test
     @WithLogin
@@ -26,5 +33,27 @@ public class PartyTests extends TestBaseUi {
                 .enteringAMessageInChat(message)
                 .clickSendButton()
                 .checkPartyChat(message);
+    }
+
+    @Test
+    @WithLogin
+    void partyTest(){
+
+        partyPage.openPartyPage()
+                 .buttonShieldClick()
+                 .checkNameInProfile(authConfig.login());
+
+        /*open("/party");
+        $(".shield").click();
+        $(".character-name").shouldHave(text("Gan9leri"));*/
+    }
+
+    @Test
+    @WithLogin
+    void checkLeaderPartyTest(){
+        partyPage.openPartyPage()
+                 .checkLeaderName(authConfig.login())
+                 .leaderProfileOpen()
+                 .checkNameInProfile(authConfig.login());
     }
 }
