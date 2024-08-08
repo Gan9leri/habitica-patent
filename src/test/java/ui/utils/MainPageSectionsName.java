@@ -2,9 +2,11 @@ package ui.utils;
 
 import lombok.Getter;
 
+import java.lang.module.Configuration;
+
 @Getter
 public enum MainPageSectionsName {
-    ISSUES(0, "https://habitica.com/"),
+    ISSUES(0,  "https://habitica.com/"),
     INVENTORY(1, "https://habitica.com/inventory/items"),
     SHOP(2, "https://habitica.com/shops/market"),
     TEAM(3, "https://habitica.com/party"),
