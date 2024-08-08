@@ -133,12 +133,12 @@ gradle clean test -Dhost=local
 #### WEB
 
 ```
-gradle clean web -Dhost=habitica
+gradle clean web -Dhost=local
 ```
 
 #### API
 ```
-gradle clean api -Dhost=habitica
+gradle clean api -Dhost=local
 ```
 
 #### Mobile
