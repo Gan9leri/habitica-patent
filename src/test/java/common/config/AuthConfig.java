@@ -14,4 +14,6 @@ public interface AuthConfig extends Config {
     String browserstackUser();
 
     String browserstackKey();
+
+    String host();
 }
