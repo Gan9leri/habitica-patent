@@ -22,8 +22,8 @@ public class TaskExtension {
                 new File("src/test/resources/request/PostAddTask.json"),
                 PostCreateTaskUserRequestModel[].class
         );
-        request[0].setText(data.task);
-        request[0].set_id(data.taskId);
+        request[0].setText(data.getTask());
+        request[0].set_id(data.getTaskId());
         PostCreateTaskUserResponseModel response =
                 step("Отправка POST запроса на добавление задачи", () ->
                         given(requestSpec)
