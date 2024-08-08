@@ -7,7 +7,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ui.pages.FaqPage;
 import ui.pages.MainPage;
 import ui.pages.OverviewPage;
 
@@ -18,7 +17,6 @@ import ui.pages.OverviewPage;
 public class NavigationTests extends TestBaseUi {
     MainPage mainPage = new MainPage();
     OverviewPage overviewPage = new OverviewPage();
-    FaqPage faqPage = new FaqPage();
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
 
     @Test
