@@ -21,7 +21,7 @@ public class TasksTests extends TestBaseUi {
     @WithLogin
     @DisplayName("UI: Проверка возможности создания задачи")
     void addTaskTest() {
-        String task = data.task;
+        String task = data.getTask();
         mainPage.openMainPage()
                 .clickAddTaskButton()
                 .selectItemTask()
