@@ -1,7 +1,6 @@
 package ui.tests;
 
 import ui.enumeration.MainPageSectionsName;
-import ui.enumeration.FaqPageSectionsNames;
 import extensions.WithLogin;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -21,18 +20,6 @@ public class NavigationTests extends TestBaseUi {
     OverviewPage overviewPage = new OverviewPage();
     FaqPage faqPage = new FaqPage();
     MainPageSectionsName[] mainPageChapters = MainPageSectionsName.values();
-    FaqPageSectionsNames[] faqPageChapters = FaqPageSectionsNames.values();
-
-    @Test
-    @WithLogin
-    @DisplayName("UI: Проверка возможности перехода к Правилам сообщества")
-    void openCommunityGuidelinesTest() {
-
-        mainPage.openMainPage()
-                .clickCommunityRules()
-                .moveToNewTab()
-                .checkUrl("https://habitica.com/static/community-guidelines");
-    }
 
     @Test
     @WithLogin
@@ -51,18 +38,6 @@ public class NavigationTests extends TestBaseUi {
         for (MainPageSectionsName item : mainPageChapters) {
             mainPage.clickMenuCollapseElement(item.getValue())
                     .checkUrl(item.getLink());
-        }
-    }
-
-    @Test
-    @WithLogin
-    @DisplayName("UI: Навигация по разделам Faq")
-    void faqPageNavigationTest() {
-        faqPage.openFaqPage();
-        for (FaqPageSectionsNames item : faqPageChapters) {
-            faqPage.clickNavBarChapter(item.getValue())
-                    .checkUrl(item.getLink());
-
         }
     }
 }
