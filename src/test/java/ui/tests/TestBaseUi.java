@@ -3,6 +3,7 @@ package ui.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import common.config.ApiConfig;
+import common.config.AuthConfig;
 import common.config.WebConfig;
 import common.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,6 +21,7 @@ public class TestBaseUi {
     @BeforeAll
     public static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
+        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class, System.getProperties());
         ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
         RestAssured.baseURI = apiConfig.baseURI();
         RestAssured.basePath = apiConfig.basePath();
@@ -32,7 +34,7 @@ public class TestBaseUi {
         Configuration.holdBrowserOpen= true;
         if (System.getProperty("host", "selenoid").equals("selenoid")) {
             Configuration.browserVersion = webConfig.browserVersion();
-            Configuration.remote = webConfig.remoteUrl();
+            Configuration.remote = authConfig.host();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
